@@ -2,7 +2,7 @@
 
 ## Project
 
-**SkillForge AI — Career Pivot Coach**
+**PivotCraft AI — Career Pivot Coach**
 
 ## One-line pitch
 
@@ -10,9 +10,9 @@ Turn a career change into a role-specific learning plan, portfolio proof, interv
 
 ## Solution
 
-SkillForge AI helps a learner move from their current experience toward a target role. They can add their profile or resume, choose a role, and paste a real job description. Opportunity Match compares the role requirements with the learner's recorded skills and evidence, then surfaces the most relevant gaps. The Weekly Planner turns those priorities into a week-by-week plan, while Project Forge suggests portfolio work connected to the gaps. Interview Arena gives mock interview practice and evaluates answers against a rubric. Progress pages track completed learning and evidence.
+PivotCraft AI helps a learner move from their current experience toward a target role. They can add their profile or resume, choose a role, and paste a real job description. Opportunity Match compares the role requirements with the learner's recorded skills and evidence, then surfaces the most relevant gaps. The Weekly Planner turns those priorities into a week-by-week plan, while Project Forge suggests portfolio work connected to the gaps. Interview Arena gives mock interview practice and evaluates answers against a rubric. Progress pages track completed learning and evidence.
 
-The Application Tracker closes the loop after the learner starts applying. Users record company, role, role type, date, and outcome. SkillForge summarizes interview and offer outcomes by role type so the learner can compare their own application history and adjust which roles they prioritize. The summaries are based only on entries the user records; they are not predictions about the broader job market.
+The Application Tracker closes the loop after the learner starts applying. Users record company, role, role type, date, and outcome. PivotCraft summarizes interview and offer outcomes by role type so the learner can compare their own application history and adjust which roles they prioritize. The summaries are based only on entries the user records; they are not predictions about the broader job market.
 
 ## Problem 5 checklist
 

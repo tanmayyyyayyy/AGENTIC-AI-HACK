@@ -15,13 +15,13 @@ import path from 'node:path';
  * caches it at import time), so stale leftovers are cleared before the first load
  * and later `setupFiles` runs in the same worker leave the file alone.
  */
-if (!process.env.SKILLFORGE_DB_FILE) {
+if (!process.env.PIVOTCRAFT_DB_FILE) {
   const workerId = process.env.VITEST_WORKER_ID ?? String(process.pid);
-  const dir = path.join(os.tmpdir(), 'skillforge-tests');
+  const dir = path.join(os.tmpdir(), 'pivotcraft-tests');
   const file = path.join(dir, `data-${workerId}.json`);
 
   fs.mkdirSync(dir, { recursive: true });
   fs.rmSync(file, { force: true });
 
-  process.env.SKILLFORGE_DB_FILE = file;
+  process.env.PIVOTCRAFT_DB_FILE = file;
 }

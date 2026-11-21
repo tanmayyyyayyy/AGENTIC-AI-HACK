@@ -1,4 +1,4 @@
-# SkillForge AI — Hackathon Submission Checklist
+# PivotCraft AI — Hackathon Submission Checklist
 
 > **Hackathon Platform:** Product Space AI Hackathon  
 > **Track:** Problem 5 — Career Pivot Coach  

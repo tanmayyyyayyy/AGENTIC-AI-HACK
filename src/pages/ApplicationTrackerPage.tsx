@@ -11,7 +11,7 @@ type Application = {
   outcome: Outcome;
 };
 
-const STORAGE_KEY = 'skillforge-career-applications-v1';
+const STORAGE_KEY = 'pivotcraft-career-applications-v1';
 function readApplications(): Application[] {
   try {
     const saved = localStorage.getItem(STORAGE_KEY);

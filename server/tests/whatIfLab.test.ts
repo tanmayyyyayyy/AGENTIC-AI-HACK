@@ -4,7 +4,7 @@ import { createApp } from '../app.js';
 import { db, DEMO_USER_ID } from '../db/store.js';
 
 /**
- * SkillForge 2.0 — What-If Lab.
+ * PivotCraft 2.0 — What-If Lab.
  *
  * Proves the Career Twin extension produces rule-based comparative scenarios
  * with prerequisite blocking, milestone movement, and remaining evidence gaps,

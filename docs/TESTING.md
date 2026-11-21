@@ -1,4 +1,4 @@
-# SkillForge AI — Testing & Verification Guide
+# PivotCraft AI — Testing & Verification Guide
 
 > **Current Baseline:** 365 tests across 32 test suites  
 > **Status:** 100% Passing (0 failed, 0 skipped)  
@@ -29,13 +29,13 @@ npm run lint
 ## 2. Test Architecture & Data Isolation
 
 ### 2.1 Temp-Store Isolation (`server/tests/setup.ts`)
-Vitest executes with `server/tests/setup.ts` preloaded. The setup hook dynamically redirects `SKILLFORGE_DB_FILE` to a unique temporary file path under the operating system's temp directory:
+Vitest executes with `server/tests/setup.ts` preloaded. The setup hook dynamically redirects `PIVOTCRAFT_DB_FILE` to a unique temporary file path under the operating system's temp directory:
 
 ```ts
 // server/tests/setup.ts
-process.env.SKILLFORGE_DB_FILE = path.join(
+process.env.PIVOTCRAFT_DB_FILE = path.join(
   os.tmpdir(),
-  `skillforge_test_${process.pid}_${Math.random().toString(36).slice(2)}.json`
+  `pivotcraft_test_${process.pid}_${Math.random().toString(36).slice(2)}.json`
 );
 ```
 

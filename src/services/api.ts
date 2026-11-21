@@ -64,17 +64,17 @@ import { toUserMessage } from '../utils/errorMessage.js';
 
 const API_BASE = (import.meta.env.VITE_API_BASE_URL as string | undefined)?.replace(/\/+$/, '') || '/api';
 
-export const UNAUTHORIZED_EVENT = 'skillforge:unauthorized';
+export const UNAUTHORIZED_EVENT = 'pivotcraft:unauthorized';
 
 export function getAuthToken(): string | null {
-  return localStorage.getItem('skillforge_auth_token');
+  return localStorage.getItem('pivotcraft_auth_token');
 }
 
 export function setAuthToken(token: string | null): void {
   if (token) {
-    localStorage.setItem('skillforge_auth_token', token);
+    localStorage.setItem('pivotcraft_auth_token', token);
   } else {
-    localStorage.removeItem('skillforge_auth_token');
+    localStorage.removeItem('pivotcraft_auth_token');
   }
 }
 
@@ -410,7 +410,7 @@ export const api = {
       request<AiProviderTestResult>('/ai-provider/test', { method: 'POST' })
   },
 
-  // Feature 1: SkillForge Radar
+  // Feature 1: PivotCraft Radar
   skillRadar: {
     get: () =>
       request<{ radar: SkillRadarData }>('/skill-radar')
@@ -518,7 +518,7 @@ export const api = {
       })
   },
 
-  // SkillForge 2.0 — Career Autopilot
+  // PivotCraft 2.0 — Career Autopilot
   autopilot: {
     getPlan: () =>
       request<{ plan: CareerAutopilotPlan; decisions: DecisionRecord[] }>('/autopilot'),
@@ -555,7 +555,7 @@ export const api = {
       })
   },
 
-  // SkillForge 2.0 — Live Readiness Experiment
+  // PivotCraft 2.0 — Live Readiness Experiment
   experiment: {
     start: (goal?: string) =>
       request<{ experiment: ReadinessExperimentRecord }>('/experiment/start', {
@@ -589,7 +589,7 @@ export const api = {
       request<{ experiment: ReadinessExperimentRecord }>(`/experiment/${id}/complete`, { method: 'POST' })
   },
 
-  // SkillForge 2.0 — Live Skill Proof Lab
+  // PivotCraft 2.0 — Live Skill Proof Lab
   skillProofLab: {
     getGapChallenge: (skillId?: string) =>
       request<{ challenge: GapChallenge }>(

@@ -27,7 +27,7 @@ import type {
  */
 
 const TWIN_DISCLAIMER =
-  'This twin reflects only the data stored in your SkillForge profile. Skills without ' +
+  'This twin reflects only the data stored in your PivotCraft profile. Skills without ' +
   'an assessment or project are self-reported and may be inaccurate. It is a planning ' +
   'aid, not an evaluation of your ability or employability.';
 
@@ -321,7 +321,7 @@ export function simulateScenarios(
     scenarios: results,
     recommendation,
     disclaimer:
-      'Scenario projections are heuristic estimates computed from your own SkillForge data. ' +
+      'Scenario projections are heuristic estimates computed from your own PivotCraft data. ' +
       'They are intended for planning and comparison only, not as guarantees.',
     generatedAt: new Date().toISOString()
   };
@@ -570,7 +570,7 @@ export function evolveCareerTwinScenarios(userId: string): import('../../src/typ
     scenarios,
     recommendedScenario: 'skill_gap_focused',
     comparisonSummary: `Comparing 5 scenarios against your ${weeklyHours} hrs/week availability. The "Focused Skill-Gap Closure" scenario offers the highest efficiency gain (+18 readiness points in ${focusedWeeks} weeks) by addressing top blocker skills first.`,
-    disclaimer: 'All scenario dates and readiness changes are deterministic mathematical estimates derived from your personal profile and historical activity. SkillForge does not guarantee employment outcomes.',
+    disclaimer: 'All scenario dates and readiness changes are deterministic mathematical estimates derived from your personal profile and historical activity. PivotCraft does not guarantee employment outcomes.',
     generatedAt: new Date().toISOString()
   };
 }

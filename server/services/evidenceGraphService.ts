@@ -33,7 +33,7 @@ import type {
  */
 
 const DISCLAIMER =
-  'SkillForge compares claims with your own stored evidence only; skills without an assessment ' +
+  'PivotCraft compares claims with your own stored evidence only; skills without an assessment ' +
   'or completed project are self-reported and not independently verified.';
 
 const MAX_SKILL_NODES = 60;

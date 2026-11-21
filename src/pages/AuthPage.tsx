@@ -38,7 +38,7 @@ export const AuthPage: React.FC = () => {
           throw new Error('Please enter your full name.');
         }
         await register(name.trim(), email.trim(), password);
-        toast.success('Account created! Welcome to SkillForge AI.');
+        toast.success('Account created! Welcome to PivotCraft AI.');
         navigate('/onboarding');
       } else {
         await login(email.trim(), password);
@@ -119,7 +119,7 @@ export const AuthPage: React.FC = () => {
             >
               <Layers size={20} color="#ffffff" />
             </div>
-            <span>SkillForge <span style={{ color: 'var(--color-accent)' }}>AI</span></span>
+            <span>PivotCraft <span style={{ color: 'var(--color-accent)' }}>AI</span></span>
           </Link>
           <h2 style={{ fontFamily: 'var(--font-serif)', fontSize: '1.8rem', fontWeight: 600, color: 'var(--text-primary)', marginTop: '1.25rem' }}>
             {isRegister ? 'Create Your Account' : 'Welcome Back'}

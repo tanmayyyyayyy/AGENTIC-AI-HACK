@@ -14,7 +14,7 @@ import type {
 } from '../../src/types/index.js';
 
 /**
- * SkillForge 2.0 — What-If Lab.
+ * PivotCraft 2.0 — What-If Lab.
  *
  * Extends the existing Career Twin scenario simulator with adjustable weekly
  * hours and horizon, explicit prerequisite blocking from the canonical gap

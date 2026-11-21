@@ -27,7 +27,7 @@ import type {
 } from '../../src/types/index.js';
 
 /**
- * SkillForge 2.0 — Career Autopilot.
+ * PivotCraft 2.0 — Career Autopilot.
  *
  * The Autopilot is an *orchestrator*, not a second career engine. It decomposes
  * a career goal into dependency-aware objectives, proposes actions that map onto
@@ -42,7 +42,7 @@ import type {
  */
 
 const AUTOPILOT_DISCLAIMER =
-  'Career Autopilot coordinates the existing SkillForge engines using only the data ' +
+  'Career Autopilot coordinates the existing PivotCraft engines using only the data ' +
   'stored in your profile. It recommends and tracks actions; it never fabricates ' +
   'progress, and projections are planning aids, not guarantees of employment.';
 

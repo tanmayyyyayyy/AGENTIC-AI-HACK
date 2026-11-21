@@ -4,7 +4,7 @@ import { createApp } from '../app.js';
 import { db } from '../db/store.js';
 
 /**
- * SkillForge 2.0 — Live Career Readiness Experiment (Phase 3).
+ * PivotCraft 2.0 — Live Career Readiness Experiment (Phase 3).
  *
  * End-to-end over real state: each stage produces real evidence and readiness is
  * recalculated by the deterministic engine. Proves the experiment never inflates

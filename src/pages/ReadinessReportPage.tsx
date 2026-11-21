@@ -47,7 +47,7 @@ export const ReadinessReportPage: React.FC = () => {
       const objectUrl = URL.createObjectURL(blob);
       const link = document.createElement('a');
       link.href = objectUrl;
-      link.download = filename || `skillforge-readiness-report-${new Date().toISOString().slice(0, 10)}.pdf`;
+      link.download = filename || `pivotcraft-readiness-report-${new Date().toISOString().slice(0, 10)}.pdf`;
       document.body.appendChild(link);
       link.click();
       link.remove();
@@ -152,7 +152,7 @@ export const ReadinessReportPage: React.FC = () => {
                 <Layers size={18} color="#ffffff" />
               </div>
               <span style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '1.35rem' }}>
-                SkillForge AI
+                PivotCraft AI
               </span>
             </div>
             <div style={{ fontSize: '0.85rem', color: 'var(--text-muted)', marginTop: '0.3rem' }}>

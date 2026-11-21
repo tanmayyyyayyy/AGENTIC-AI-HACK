@@ -16,7 +16,7 @@ import type {
 /**
  * Subphase 3C — Resume Truth Engine.
  *
- * Compares a resume *draft* against the student's own SkillForge evidence and
+ * Compares a resume *draft* against the student's own PivotCraft evidence and
  * reports, per claim, what is independently verifiable. It is deliberately
  * conservative:
  *   - it never invents endorsements or upgrades a claim,
@@ -25,7 +25,7 @@ import type {
  */
 
 const DISCLAIMER =
-  'SkillForge compares claims with your own stored evidence only; it does not verify external ' +
+  'PivotCraft compares claims with your own stored evidence only; it does not verify external ' +
   'experience and never edits your resume.';
 
 const MAX_SKILLS = 200;
@@ -130,7 +130,7 @@ export function checkResumeTruth(userId: string, draft: ResumeTruthDraft): Resum
   const experienceOut: ResumeExperienceClaimAssessment[] = draftExperience.slice(0, MAX_EXPERIENCE).map(exp => ({
     organization: typeof exp.organization === 'string' ? exp.organization.trim().slice(0, 120) : '',
     role: typeof exp.role === 'string' ? exp.role.trim().slice(0, 120) : '',
-    note: 'Self-reported role. SkillForge does not verify external employment — add measurable outcomes.'
+    note: 'Self-reported role. PivotCraft does not verify external employment — add measurable outcomes.'
   }));
 
   const missingFromResume: ResumeMissingClaim[] = role.requiredSkills
@@ -160,11 +160,11 @@ export function checkResumeTruth(userId: string, draft: ResumeTruthDraft): Resum
   const totalClaims = skills.length;
 
   const advisories: string[] = [
-    'This check compares your resume only against evidence stored in your SkillForge profile. External work, certificates, and coursework are not independently verified.'
+    'This check compares your resume only against evidence stored in your PivotCraft profile. External work, certificates, and coursework are not independently verified.'
   ];
   if (unsupported > 0) {
     advisories.push(
-      `${unsupported} skill claim${unsupported === 1 ? '' : 's'} have no matching profile evidence. SkillForge will not mark these as verified.`
+      `${unsupported} skill claim${unsupported === 1 ? '' : 's'} have no matching profile evidence. PivotCraft will not mark these as verified.`
     );
   }
   const overstated = skills.filter(s => s.levelOverstated).length;
@@ -209,13 +209,13 @@ function skillSuggestion(verdict: ResumeClaimVerdict, levelOverstated: boolean):
         ? 'In your profile without independent evidence, and the stated level exceeds it. Take the assessment or finish a project before claiming this level.'
         : 'In your profile but not independently verified. Take the assessment or complete a project to strengthen it.';
     default:
-      return 'No matching evidence in your SkillForge profile. Add and verify this skill, or reconsider the claim.';
+      return 'No matching evidence in your PivotCraft profile. Add and verify this skill, or reconsider the claim.';
   }
 }
 
 function projectSuggestion(title: string, hasLink: boolean, matchedProfileProject: boolean): string {
   if (!title) return 'Add a title so this project can be referenced.';
-  if (matchedProfileProject) return 'Already in your SkillForge profile — keep the description consistent.';
-  if (hasLink) return 'Not in your SkillForge profile yet. Add it as project evidence so it becomes verifiable.';
+  if (matchedProfileProject) return 'Already in your PivotCraft profile — keep the description consistent.';
+  if (hasLink) return 'Not in your PivotCraft profile yet. Add it as project evidence so it becomes verifiable.';
   return 'Add a repository or live link so this project can be checked.';
 }

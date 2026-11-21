@@ -1,9 +1,9 @@
-# SkillForge AI — Known Limitations & Operational Considerations
+# PivotCraft AI — Known Limitations & Operational Considerations
 
 > **Version:** 2.0 MVP  
 > **Platform Target:** Product Space AI Hackathon
 
-This document provides a factual, transparent record of current architectural boundaries, hardware dependencies, and operational trade-offs in SkillForge AI 2.0.
+This document provides a factual, transparent record of current architectural boundaries, hardware dependencies, and operational trade-offs in PivotCraft AI 2.0.
 
 ---
 
@@ -16,16 +16,16 @@ The backend uses a high-performance transactional JSON file store (`server/db/da
 
 ### Mitigation & Production Recommendation
 1. **Pristine Evaluator Reset:** For hackathon evaluations, the ephemeral reset actually ensures each evaluator starts with clean, consistent demo data via `POST /api/auth/demo/reset`.
-2. **Persistent Disk Support:** Render supports attached Persistent Disks on paid plans (Starter and up). SkillForge AI already supports this via the `SKILLFORGE_DB_FILE` environment variable:
+2. **Persistent Disk Support:** Render supports attached Persistent Disks on paid plans (Starter and up). PivotCraft AI already supports this via the `PIVOTCRAFT_DB_FILE` environment variable:
    ```yaml
    # render.yaml snippet
    disk:
-     name: skillforge-data
-     mountPath: /var/data/skillforge
+     name: pivotcraft-data
+     mountPath: /var/data/pivotcraft
      sizeGB: 1
    envVars:
-     - key: SKILLFORGE_DB_FILE
-       value: /var/data/skillforge/data.json
+     - key: PIVOTCRAFT_DB_FILE
+       value: /var/data/pivotcraft/data.json
    ```
 3. **Long-Term Evolution:** Replace the JSON file adapter with a PostgreSQL or CockroachDB driver for horizontal multi-region scaling.
 
@@ -39,7 +39,7 @@ Live generative AI capabilities rely on the Google Gemini API (`gemini-3.8-flash
 - Network rate limits or quota ceilings on free-tier Gemini API keys can reject calls.
 
 ### Fallback Guarantee
-- **Deterministic Advisory Engine:** SkillForge AI is architected with a 100% offline-capable Deterministic Advisory Engine.
+- **Deterministic Advisory Engine:** PivotCraft AI is architected with a 100% offline-capable Deterministic Advisory Engine.
 - **No Fabricated Output:** The application never falsely claims a deterministic response came from Gemini.
 - **Real-Time Health Diagnostics:** The `/settings` page and `/api/ai-provider/status` endpoint report the exact runtime health (`connected`, `request_failed`, `not_configured`, or `fallback_active`).
 

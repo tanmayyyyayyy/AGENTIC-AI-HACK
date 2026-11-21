@@ -91,9 +91,9 @@ export const DashboardPage: React.FC = () => {
     <main className="pivot-dashboard">
       <div className="pivot-atmosphere" aria-hidden="true" />
       <header className="pivot-topbar">
-        <Link to="/dashboard" className="pivot-wordmark" aria-label="SkillForge home">
+        <Link to="/dashboard" className="pivot-wordmark" aria-label="PivotCraft home">
           <span className="pivot-mark"><span /><span /><span /></span>
-          <span>skillforge<span className="pivot-wordmark-dot">.</span></span>
+          <span>pivotcraft<span className="pivot-wordmark-dot">.</span></span>
         </Link>
         <nav className="pivot-topnav" aria-label="Quick navigation">
           <Link to="/analysis">Skill map</Link>
@@ -275,7 +275,7 @@ export const DashboardPage: React.FC = () => {
           <Link to="/projects" className="pivot-step"><span className="pivot-step-number step-lavender">03</span><span><b>Make proof employers can see</b><small>Build one focused project</small></span><ArrowDownRight size={17} /></Link>
         </section>
 
-        <footer className="pivot-footer"><span>SKILLFORGE STUDIO <span className="pivot-footer-star">✳</span> CAREER PIVOT, MADE PERSONAL</span><Link to="/applications"><span>After the learning comes the leap</span> <ArrowUpRight size={13} /></Link></footer>
+        <footer className="pivot-footer"><span>PIVOTCRAFT STUDIO <span className="pivot-footer-star">✳</span> CAREER PIVOT, MADE PERSONAL</span><Link to="/applications"><span>After the learning comes the leap</span> <ArrowUpRight size={13} /></Link></footer>
       </div>
     </main>
   );

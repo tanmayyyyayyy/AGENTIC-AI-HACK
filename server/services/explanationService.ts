@@ -5,7 +5,7 @@ import type {
 } from '../../src/types/index.js';
 
 /**
- * SkillForge 2.0 — Trust & Explainability Layer.
+ * PivotCraft 2.0 — Trust & Explainability Layer.
  *
  * One shared builder for the explanation attached to every significant
  * recommendation (Career Autopilot, Live Readiness Experiment, Evidence Graph

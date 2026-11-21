@@ -16,7 +16,7 @@ import type {
 } from '../../src/types/index.js';
 
 /**
- * SkillForge 2.0 — Live Career Readiness Experiment (Phase 3).
+ * PivotCraft 2.0 — Live Career Readiness Experiment (Phase 3).
  *
  * Runs a reproducible before/after experiment over real state. Every stage that
  * claims progress is backed by a real evidence record produced by an existing

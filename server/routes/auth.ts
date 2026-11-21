@@ -143,7 +143,7 @@ authRouter.post('/demo', (_req: Request, res: Response): void => {
       user: {
         id: DEMO_USER_ID,
         name: 'Aarav Sharma',
-        email: 'demo.evaluator@skillforge.ai',
+        email: 'demo.evaluator@pivotcraft.ai',
         isDemo: true
       },
       profile

@@ -4,7 +4,7 @@ import { createApp } from '../app.js';
 import { db } from '../db/store.js';
 
 /**
- * SkillForge 2.0 — Live Skill Proof Lab (Phase 3/7).
+ * PivotCraft 2.0 — Live Skill Proof Lab (Phase 3/7).
  *
  * Proves the gap-driven challenge uses the student's real skill gap, labels its
  * evaluation method honestly, records durable evidence only on a pass, and links

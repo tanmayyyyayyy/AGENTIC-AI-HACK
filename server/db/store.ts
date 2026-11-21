@@ -70,7 +70,7 @@ export const DEMO_USER_ID = 'demo_student_aarav';
 export function getDemoSeedData(): DatabaseSchema {
   const demoUser: User = {
     id: DEMO_USER_ID,
-    email: 'demo.evaluator@skillforge.ai',
+    email: 'demo.evaluator@pivotcraft.ai',
     name: 'Aarav Sharma',
     createdAt: new Date().toISOString(),
     isDemo: true
@@ -275,7 +275,7 @@ export function getDemoSeedData(): DatabaseSchema {
         {
           id: 'msg_welcome',
           role: 'assistant',
-          content: 'Hello Aarav! I am your SkillForge Career Intelligence Coach. You are targeting the **AI/ML Engineer** role. Based on your profile, you already have solid Python foundations (85% verified) and basic SQL. Your top immediate priority is completing your **PyTorch deep learning foundations** and finishing Milestone 3 of your **Enterprise RAG Pipeline**. What would you like guidance on today?',
+          content: 'Hello Aarav! I am your PivotCraft Career Intelligence Coach. You are targeting the **AI/ML Engineer** role. Based on your profile, you already have solid Python foundations (85% verified) and basic SQL. Your top immediate priority is completing your **PyTorch deep learning foundations** and finishing Milestone 3 of your **Enterprise RAG Pipeline**. What would you like guidance on today?',
           timestamp: new Date().toISOString(),
           engineUsed: 'Deterministic Advisory Engine',
           suggestedActions: [
@@ -308,8 +308,8 @@ export class DatabaseStore {
   constructor(options: { filePath?: string; seed?: () => DatabaseSchema } = {}) {
     this.filePath = options.filePath
       ? path.resolve(options.filePath)
-      : process.env.SKILLFORGE_DB_FILE
-        ? path.resolve(process.env.SKILLFORGE_DB_FILE)
+      : process.env.PIVOTCRAFT_DB_FILE
+        ? path.resolve(process.env.PIVOTCRAFT_DB_FILE)
         : DEFAULT_DB_FILE;
     this.seedFactory = options.seed ?? getDemoSeedData;
     this.data = this.load();

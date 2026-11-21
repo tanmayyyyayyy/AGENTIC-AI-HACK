@@ -20,7 +20,7 @@ import type {
 } from '../../src/types/index.js';
 
 /**
- * SkillForge 2.0 — Opportunity-to-Action workflow.
+ * PivotCraft 2.0 — Opportunity-to-Action workflow.
  *
  * Turns an evaluated opportunity match (saved analysis or pasted description)
  * into approval-gated Career Autopilot actions for the highest-priority

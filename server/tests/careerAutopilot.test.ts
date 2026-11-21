@@ -4,7 +4,7 @@ import { createApp } from '../app.js';
 import { db, DEMO_USER_ID } from '../db/store.js';
 
 /**
- * SkillForge 2.0 — Career Autopilot (Phase 2).
+ * PivotCraft 2.0 — Career Autopilot (Phase 2).
  *
  * Proves the autopilot is driven by real evidence and real engines: it uses the
  * student's actual gaps, preserves completed work across replans, gates

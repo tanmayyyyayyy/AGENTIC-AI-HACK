@@ -4,7 +4,7 @@ import { createApp } from '../app.js';
 import { db, DEMO_USER_ID } from '../db/store.js';
 
 /**
- * SkillForge 2.0 — Final Integration QA and Hackathon Demo Readiness
+ * PivotCraft 2.0 — Final Integration QA and Hackathon Demo Readiness
  *
  * PHASE 2 — End-to-End Workflow:
  *   Job description -> Opportunity analysis -> Skill gap identification ->

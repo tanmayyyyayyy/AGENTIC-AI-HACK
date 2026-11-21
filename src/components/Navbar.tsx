@@ -12,7 +12,7 @@ export const Navbar: React.FC = () => {
   const handleDemoClick = async () => {
     try {
       await demoLogin();
-      toast.success('Demo mode loaded! Welcome to SkillForge AI.');
+      toast.success('Demo mode loaded! Welcome to PivotCraft AI.');
       navigate('/dashboard');
     } catch {
       toast.error('Failed to load demo mode.');
@@ -64,7 +64,7 @@ export const Navbar: React.FC = () => {
           >
             <Layers size={20} color="#ffffff" />
           </div>
-          <span>SkillForge <span style={{ color: 'var(--color-accent)' }}>AI</span></span>
+          <span>PivotCraft <span style={{ color: 'var(--color-accent)' }}>AI</span></span>
         </Link>
 
         <nav style={{ display: 'flex', alignItems: 'center', gap: '1.5rem' }} className="desktop-nav">

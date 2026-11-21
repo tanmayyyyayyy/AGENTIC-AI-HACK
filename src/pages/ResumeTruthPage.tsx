@@ -137,7 +137,7 @@ export const ResumeTruthPage: React.FC = () => {
           <h1 style={{ fontFamily: 'var(--font-serif)', fontSize: '1.9rem', margin: 0 }}>Resume Truth Engine</h1>
         </div>
         <p style={{ color: 'var(--text-secondary)', marginTop: '0.5rem', maxWidth: 720 }}>
-          Upload your resume to see which claims your SkillForge evidence actually supports. We never
+          Upload your resume to see which claims your PivotCraft evidence actually supports. We never
           invent endorsements or edit your resume — every claim is checked against your own assessments
           and completed projects.
         </p>

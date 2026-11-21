@@ -1,8 +1,8 @@
-# SkillForge AI — Career Pivot Coach
+# PivotCraft AI — Career Pivot Coach
 
 **Turn a career change into a role-specific learning plan, portfolio proof, interview practice, and a feedback loop from application outcomes.**
 
-This repository is adapted for Product Space AI Hackathon **Problem 5: Career pivot coach**. The existing SkillForge career-intelligence engine already supports resume/profile intake, job-description matching, gap analysis, weekly planning, project recommendations, rubric-scored mock interviews, and progress tracking. The Application Tracker adds outcome history grouped by role type so users can see where interviews and offers are coming from.
+This repository is adapted for Product Space AI Hackathon **Problem 5: Career pivot coach**. The existing PivotCraft career-intelligence engine already supports resume/profile intake, job-description matching, gap analysis, weekly planning, project recommendations, rubric-scored mock interviews, and progress tracking. The Application Tracker adds outcome history grouped by role type so users can see where interviews and offers are coming from.
 
 ### Problem 5 flow
 
@@ -42,7 +42,7 @@ Learners face three critical challenges:
 
 ## The Solution
 
-**SkillForge AI** is an explainable career readiness intelligence platform that:
+**PivotCraft AI** is an explainable career readiness intelligence platform that:
 
 1. **Analyzes** student profiles against curated career-role requirements based on technical skill mappings and job-description analysis.
 2. **Identifies** critical skill gaps using a deterministic, explainable gap analysis algorithm (`gap × importance weight`).
@@ -216,7 +216,7 @@ Click **"Explore Demo"** on the landing page to instantly authenticate with the 
 
 ## Environment Configuration
 
-SkillForge AI runs out-of-the-box in development and offline demo mode with zero configuration. Copy `.env.example` to `.env` to customize settings:
+PivotCraft AI runs out-of-the-box in development and offline demo mode with zero configuration. Copy `.env.example` to `.env` to customize settings:
 
 | Variable | Default Value | Purpose & Requirement |
 | :--- | :--- | :--- |
@@ -225,7 +225,7 @@ SkillForge AI runs out-of-the-box in development and offline demo mode with zero
 | `NODE_ENV` | `development` | Runtime environment mode (`development` or `production`). |
 | `JWT_SECRET` | *(Built-in Dev Fallback)* | **Required for Production:** 64-character secret for signing JWT auth tokens. |
 | `CLIENT_ORIGIN` | `""` | Optional comma-separated list of allowed CORS origins. |
-| `SKILLFORGE_DB_FILE`| `server/db/data.json`| Path to JSON database. On Render, set to `/var/data/skillforge/data.json` with Persistent Disk. |
+| `PIVOTCRAFT_DB_FILE`| `server/db/data.json`| Path to JSON database. On Render, set to `/var/data/pivotcraft/data.json` with Persistent Disk. |
 | `GEMINI_API_KEY` | *(Optional)* | Google Gemini API key for live AI coaching and enhancement. If omitted, uses deterministic engine. |
 | `GEMINI_MODEL` | `gemini-3.8-flash` | Gemini model name for live requests. |
 | `AI_PROVIDER` | `gemini` | Set to `deterministic` to force offline advisory engine even if key is present. |
@@ -235,7 +235,7 @@ SkillForge AI runs out-of-the-box in development and offline demo mode with zero
 
 ## Testing & Quality Verification
 
-SkillForge AI maintains an isolated, non-destructive test suite:
+PivotCraft AI maintains an isolated, non-destructive test suite:
 
 ```bash
 # Run all 365 tests across 32 test suites
@@ -267,7 +267,7 @@ The application can be deployed directly with Render using the included `render.
 Render's free tier uses ephemeral containers that reset local filesystem changes when the container enters sleep mode or redeploys. To maintain database changes across container restarts in production, attach a **Render Persistent Disk** and configure:
 
 ```bash
-SKILLFORGE_DB_FILE=/var/data/skillforge/data.json
+PIVOTCRAFT_DB_FILE=/var/data/pivotcraft/data.json
 ```
 
 For evaluator convenience, clicking **"Reset Demo Data"** in the top banner instantly restores clean baseline demo data.
@@ -302,7 +302,7 @@ For full technical details, see [docs/KNOWN_LIMITATIONS.md](docs/KNOWN_LIMITATIO
 
 ## Key Differentiators
 
-- **Not a Course Reseller:** SkillForge AI diagnoses gaps, prescribes targeted actions, and verifies real competency.
+- **Not a Course Reseller:** PivotCraft AI diagnoses gaps, prescribes targeted actions, and verifies real competency.
 - **Explainable by Design:** Every gap, readiness delta, and recommendation features a transparent formula and causal trace.
 - **Offline Reliability:** Built-in Deterministic Advisory Engine guarantees full demo functionality without third-party AI keys.
 - **Human-Governed Autopilot:** Career actions are never executed autonomously without student approval.

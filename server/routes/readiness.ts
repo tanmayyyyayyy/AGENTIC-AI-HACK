@@ -66,7 +66,7 @@ readinessRouter.get('/report/pdf', authMiddleware, (req: AuthenticatedRequest, r
     res.setHeader('Content-Type', 'application/pdf');
     res.setHeader(
       'Content-Disposition',
-      `attachment; filename="skillforge-readiness-${nameSlug}-${dateSlug}.pdf"`
+      `attachment; filename="pivotcraft-readiness-${nameSlug}-${dateSlug}.pdf"`
     );
     res.setHeader('Content-Length', String(pdf.length));
     res.setHeader('Cache-Control', 'no-store');

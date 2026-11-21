@@ -1,4 +1,4 @@
-# SkillForge AI — System Architecture & Technical Specifications
+# PivotCraft AI — System Architecture & Technical Specifications
 
 > **Version:** 2.0 MVP  
 > **Platform Target:** Product Space AI Hackathon (Problem 5: Career Pivot Coach)  
@@ -9,7 +9,7 @@
 
 ## 1. System Overview
 
-SkillForge AI is an explainable career readiness intelligence platform. It bridges the gap between learner skills and employer expectations by analyzing target job requirements, identifying skill gaps, orchestrating human-in-the-loop autonomous career actions (Career Autopilot), verifying skills through server-authoritative practical proofs, recording verifiable evidence in a tamper-resistant canonical evidence ledger, and synthesizing a directed Evidence Graph with causal recommendation traces.
+PivotCraft AI is an explainable career readiness intelligence platform. It bridges the gap between learner skills and employer expectations by analyzing target job requirements, identifying skill gaps, orchestrating human-in-the-loop autonomous career actions (Career Autopilot), verifying skills through server-authoritative practical proofs, recording verifiable evidence in a tamper-resistant canonical evidence ledger, and synthesizing a directed Evidence Graph with causal recommendation traces.
 
 ```mermaid
 flowchart TD
@@ -151,14 +151,14 @@ Backend endpoints are strictly modularized under `server/routes/` and backed by 
 
 ### 5.2 Deployment Persistence Behavior
 - **Default Path:** `server/db/data.json`
-- **Configurable Environment Override:** `SKILLFORGE_DB_FILE`
-- **Render Free Tier Note:** Render free tier instances use ephemeral filesystems. File modifications reset upon instance sleep/redeployment. In production deployments, mounting a persistent volume (e.g. Render Disk at `/var/data/skillforge/data.json`) guarantees permanent cross-restart durability.
+- **Configurable Environment Override:** `PIVOTCRAFT_DB_FILE`
+- **Render Free Tier Note:** Render free tier instances use ephemeral filesystems. File modifications reset upon instance sleep/redeployment. In production deployments, mounting a persistent volume (e.g. Render Disk at `/var/data/pivotcraft/data.json`) guarantees permanent cross-restart durability.
 
 ---
 
 ## 6. AI Provider Flow & Deterministic Fallback
 
-SkillForge AI incorporates a dual-mode advisory architecture:
+PivotCraft AI incorporates a dual-mode advisory architecture:
 
 ```mermaid
 flowchart LR
@@ -180,7 +180,7 @@ flowchart LR
 ## 7. Evidence Lifecycle & Readiness Methodology
 
 ### 7.1 Canonical Evidence Classification
-Evidence in SkillForge AI is never self-asserted blindly. It is partitioned into 4 distinct verification tiers:
+Evidence in PivotCraft AI is never self-asserted blindly. It is partitioned into 4 distinct verification tiers:
 
 | Tier | Classification | Verification Method | Confidence | Weight in Readiness |
 | :--- | :--- | :--- | :---: | :---: |

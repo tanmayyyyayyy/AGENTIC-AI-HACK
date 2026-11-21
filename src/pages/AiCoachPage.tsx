@@ -106,7 +106,7 @@ export const AiCoachPage: React.FC = () => {
           </div>
           <div>
             <h1 style={{ fontFamily: 'var(--font-serif)', fontSize: '1.45rem', fontWeight: 600, color: 'var(--text-primary)', margin: 0 }}>
-              SkillForge AI Career Coach
+              PivotCraft AI Career Coach
             </h1>
             <div style={{ fontSize: '0.78rem', color: 'var(--text-muted)' }}>
               Tailored specifically to your {profile?.targetRole ? profile.targetRole.toUpperCase() : 'target'} roadmap and verified skills.
@@ -194,7 +194,7 @@ export const AiCoachPage: React.FC = () => {
                   padding: '0 0.2rem'
                 }}
               >
-                {isUser ? 'You' : `SkillForge Coach (${msg.engineUsed})`} &bull;{' '}
+                {isUser ? 'You' : `PivotCraft Coach (${msg.engineUsed})`} &bull;{' '}
                 {new Date(msg.timestamp).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
               </div>
 

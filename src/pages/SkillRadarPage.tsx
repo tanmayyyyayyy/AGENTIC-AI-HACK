@@ -30,7 +30,7 @@ export const SkillRadarPage: React.FC = () => {
       const res = await api.skillRadar.get();
       setData(res.radar);
     } catch (err: any) {
-      setError(err.message || 'Failed to load SkillForge Radar analysis.');
+      setError(err.message || 'Failed to load PivotCraft Radar analysis.');
     } finally {
       setLoading(false);
     }
@@ -74,7 +74,7 @@ export const SkillRadarPage: React.FC = () => {
             <Radio size={24} />
           </div>
           <div>
-            <h1 className="os-header-title">SkillForge Radar</h1>
+            <h1 className="os-header-title">PivotCraft Radar</h1>
             <p className="os-header-subtitle">
               Market skill demand, prioritization, and explainability for <strong style={{ color: 'var(--color-accent)' }}>{data.targetRole.title}</strong>
             </p>

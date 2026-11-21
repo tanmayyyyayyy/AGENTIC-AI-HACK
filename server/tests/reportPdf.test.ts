@@ -172,7 +172,7 @@ describe('Subphase 2G: readiness report PDF renderer', () => {
 
   it('contains the header, score, breakdown, and every required section', () => {
     const text = pdfText(generateReadinessReportPdf(makeReport()));
-    expect(text).toContain('SkillForge AI');
+    expect(text).toContain('PivotCraft AI');
     expect(text).toContain('Career Readiness Report');
     expect(text).toContain('Aarav Sharma');
     expect(text).toContain('AI/ML Engineer');
@@ -320,7 +320,7 @@ describe('Subphase 2G: report PDF download endpoint', () => {
     });
     expect(res.status).toBe(200);
     expect(res.headers.get('content-type')).toBe('application/pdf');
-    expect(res.headers.get('content-disposition') || '').toMatch(/attachment; filename="skillforge-readiness-.*\.pdf"/);
+    expect(res.headers.get('content-disposition') || '').toMatch(/attachment; filename="pivotcraft-readiness-.*\.pdf"/);
     const buffer = Buffer.from(await res.arrayBuffer());
     expect(buffer.subarray(0, 5).toString('latin1')).toBe('%PDF-');
     expect(buffer.length).toBeGreaterThan(3000);

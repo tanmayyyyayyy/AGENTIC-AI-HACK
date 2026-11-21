@@ -47,7 +47,7 @@ export const Sidebar: React.FC = () => {
     {
       title: 'Career Intelligence',
       items: [
-        { to: '/skill-radar', label: 'SkillForge Radar', icon: Radio },
+        { to: '/skill-radar', label: 'PivotCraft Radar', icon: Radio },
         { to: '/opportunity-match', label: 'Opportunity Match', icon: Briefcase },
         { to: '/analysis', label: 'Skill Gap Analysis', icon: GitCompare },
         { to: '/jd-analyzer', label: 'Job Description Analyzer', icon: FileSearch },
@@ -149,7 +149,7 @@ export const Sidebar: React.FC = () => {
           </div>
           <div>
             <span style={{ fontFamily: 'var(--font-serif)', fontWeight: 700, fontSize: '1.25rem', color: 'var(--text-primary)' }}>
-              SkillForge AI
+              PivotCraft AI
             </span>
             <div style={{ fontSize: '0.72rem', color: 'var(--text-muted)' }}>Career Intelligence</div>
           </div>

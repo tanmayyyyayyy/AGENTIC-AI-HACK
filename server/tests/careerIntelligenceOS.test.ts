@@ -58,7 +58,7 @@ beforeEach(() => {
   db.resetDemoData();
   db.createUser({
     id: OTHER_USER_ID,
-    email: 'other@skillforge.ai',
+    email: 'other@pivotcraft.ai',
     name: 'Other Student User',
     createdAt: new Date().toISOString()
   });
@@ -66,7 +66,7 @@ beforeEach(() => {
 
 describe('Career Intelligence OS — Eight Integrated Features', () => {
 
-  describe('Feature 1: SkillForge Radar (/api/skill-radar)', () => {
+  describe('Feature 1: PivotCraft Radar (/api/skill-radar)', () => {
     it('requires authentication', async () => {
       const res = await api('/api/skill-radar', { token: null });
       expect(res.status).toBe(401);
@@ -385,7 +385,7 @@ describe('Career Intelligence OS — Eight Integrated Features', () => {
       expect(Array.isArray(match.requiredSkillsMatched)).toBe(true);
       expect(Array.isArray(match.requiredSkillsMissing)).toBe(true);
       expect(Array.isArray(match.explainabilityTrace)).toBe(true);
-      expect(match.hiringProbabilityNotice).toContain('SkillForge does not estimate speculative hiring probability');
+      expect(match.hiringProbabilityNotice).toContain('PivotCraft does not estimate speculative hiring probability');
     });
   });
 

@@ -211,7 +211,7 @@ export function evaluateOpportunityMatch(
         impactOnAssessment: 'Provides verifiable backing for claimed proficiencies'
       }
     ],
-    hiringProbabilityNotice: 'SkillForge does not estimate speculative hiring probability because hiring depends on external competition, interview dynamics, and organizational fit. This report evaluates skill alignment and eligibility against stated requirements only.',
+    hiringProbabilityNotice: 'PivotCraft does not estimate speculative hiring probability because hiring depends on external competition, interview dynamics, and organizational fit. This report evaluates skill alignment and eligibility against stated requirements only.',
     generatedAt: new Date().toISOString()
   };
 }

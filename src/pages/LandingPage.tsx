@@ -169,7 +169,7 @@ export const LandingPage: React.FC = () => {
                 <div style={{ width: 11, height: 11, borderRadius: '50%', background: '#f59e0b' }} />
                 <div style={{ width: 11, height: 11, borderRadius: '50%', background: '#10b981' }} />
                 <span style={{ marginLeft: '0.75rem', fontSize: '0.8rem', color: 'var(--text-muted)' }}>
-                  SkillForge AI / Career Intelligence Cockpit &mdash; Target: AI/ML Engineer
+                  PivotCraft AI / Career Intelligence Cockpit &mdash; Target: AI/ML Engineer
                 </span>
               </div>
               <span className="badge badge-medium">Live System Active</span>
@@ -295,7 +295,7 @@ export const LandingPage: React.FC = () => {
             <span style={{ fontSize: '0.85rem', fontWeight: 700, color: 'var(--color-accent)', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
               Methodology
             </span>
-            <h2 style={{ fontFamily: 'var(--font-serif)', fontSize: '2.2rem', fontWeight: 600, marginTop: '0.5rem' }}>How SkillForge AI Works</h2>
+            <h2 style={{ fontFamily: 'var(--font-serif)', fontSize: '2.2rem', fontWeight: 600, marginTop: '0.5rem' }}>How PivotCraft AI Works</h2>
             <p style={{ color: 'var(--text-secondary)', maxWidth: 600, margin: '0.75rem auto 0' }}>
               Four structured steps to convert ambiguity into a clear, measurable hiring trajectory.
             </p>
@@ -461,7 +461,7 @@ export const LandingPage: React.FC = () => {
         <div style={{ maxWidth: 1100, margin: '0 auto', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1rem' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: 'var(--text-primary)', fontWeight: 700 }}>
             <Layers size={18} color="var(--color-accent)" />
-            SkillForge AI
+            PivotCraft AI
           </div>
           <div>Product Space AI Hackathon &bull; Career Pivot Coach</div>
           <div style={{ display: 'flex', gap: '1rem' }}>

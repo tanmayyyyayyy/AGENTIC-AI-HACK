@@ -9,7 +9,7 @@ import type {
 } from '../../src/types/index.js';
 
 /**
- * SkillForge 2.0 — Evidence Intelligence (canonical evidence ledger).
+ * PivotCraft 2.0 — Evidence Intelligence (canonical evidence ledger).
  *
  * A read-only, deduplicated, skill-attributed view of every stored record that
  * can substantiate a skill claim. It never creates, upgrades, or fabricates

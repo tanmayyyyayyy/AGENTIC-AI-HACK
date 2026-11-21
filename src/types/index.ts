@@ -1233,7 +1233,7 @@ export interface EvidenceGraphNode {
   estimatedHours?: number;
   /** Source id of the underlying record, when one exists. */
   sourceId?: string;
-  /** Provenance additions (SkillForge 2.0): how this node's claim was established. */
+  /** Provenance additions (PivotCraft 2.0): how this node's claim was established. */
   verificationMethod?: string;
   provenance?: string;
   confidence?: 'high' | 'medium' | 'low';
@@ -1303,7 +1303,7 @@ export interface TrajectorySimulation {
 }
 
 /* ============================================================================
- * Integrated Feature 1 — SkillForge Radar
+ * Integrated Feature 1 — PivotCraft Radar
  * ========================================================================== */
 
 export interface SkillDemandItem {
@@ -1838,7 +1838,7 @@ export interface PortfolioIntelligenceData {
 }
 
 /* ============================================================================
- * SkillForge 2.0 — Trust & Explainability Layer
+ * PivotCraft 2.0 — Trust & Explainability Layer
  *
  * A single shared explanation contract used by every AI-assisted or
  * consequential recommendation (Autopilot, Readiness Experiment, Evidence
@@ -1898,7 +1898,7 @@ export interface DecisionRecord {
 }
 
 /* ============================================================================
- * SkillForge 2.0 — Career Autopilot
+ * PivotCraft 2.0 — Career Autopilot
  *
  * An orchestrator that decomposes a career goal into a dependency-aware
  * sequence of measurable objectives, proposes actions over existing engines
@@ -1990,7 +1990,7 @@ export interface CareerAutopilotPlan {
 }
 
 /* ============================================================================
- * SkillForge 2.0 — Opportunity-to-Action workflow
+ * PivotCraft 2.0 — Opportunity-to-Action workflow
  *
  * Turns an evaluated opportunity match into approval-gated Career Autopilot
  * actions for the highest-priority missing required skills, prioritised with
@@ -2010,7 +2010,7 @@ export interface OpportunityActionPlanResult {
 }
 
 /* ============================================================================
- * SkillForge 2.0 — Live Career Readiness Experiment
+ * PivotCraft 2.0 — Live Career Readiness Experiment
  *
  * A reproducible end-to-end workflow over real persisted state: snapshot the
  * readiness, pick the highest-priority gap, run a practical challenge, collect
@@ -2086,7 +2086,7 @@ export interface ReadinessExperimentRecord {
 }
 
 /* ============================================================================
- * SkillForge 2.0 — Live Skill Proof Lab (gap-driven challenges)
+ * PivotCraft 2.0 — Live Skill Proof Lab (gap-driven challenges)
  * ========================================================================== */
 
 export interface GapChallenge {
@@ -2131,7 +2131,7 @@ export interface NextChallengeSuggestion {
 }
 
 /* ============================================================================
- * SkillForge 2.0 — Canonical Evidence Ledger (Evidence Intelligence)
+ * PivotCraft 2.0 — Canonical Evidence Ledger (Evidence Intelligence)
  *
  * A single, deduplicated, skill-attributed view of every stored record that can
  * substantiate a skill claim. It does not store new data: it reads the existing
@@ -2172,7 +2172,7 @@ export interface EvidenceRecord {
 }
 
 /* ============================================================================
- * SkillForge 2.0 — Evidence Graph 2.0 provenance additions
+ * PivotCraft 2.0 — Evidence Graph 2.0 provenance additions
  * ========================================================================== */
 
 export type EvidenceTraceStage =
@@ -2192,7 +2192,7 @@ export interface EvidenceTraceStep {
 }
 
 /* ============================================================================
- * SkillForge 2.0 — What-If Lab
+ * PivotCraft 2.0 — What-If Lab
  *
  * Extends the existing Career Twin scenario simulator with adjustable weekly
  * hours, explicit prerequisite blocking, and a clear separation between
@@ -2247,7 +2247,7 @@ export interface WhatIfLabResult {
 }
 
 /* ============================================================================
- * SkillForge 2.0 — Personalized Project Evolution
+ * PivotCraft 2.0 — Personalized Project Evolution
  * ========================================================================== */
 
 export interface ProjectEvolutionLevel {

@@ -1,12 +1,12 @@
 #!/bin/bash
-# SkillForge AI 2.0 — Autonomous Live Product Demo Driver
+# PivotCraft AI 2.0 — Autonomous Live Product Demo Driver
 # Synchronizes Google Chrome window navigation with macOS natural voice narration.
 
 BASE_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 AUDIO_DIR="$BASE_DIR/docs/audio"
 
 echo "=========================================================="
-echo "🎬 STARTING AUTONOMOUS SKILLFORGE AI PRODUCT DEMONSTRATION"
+echo "🎬 STARTING AUTONOMOUS PIVOTCRAFT AI PRODUCT DEMONSTRATION"
 echo "=========================================================="
 
 # 1. Bring Google Chrome to the front and open landing page

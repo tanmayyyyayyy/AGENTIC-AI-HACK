@@ -4,7 +4,7 @@ import { createApp } from '../app.js';
 import { db, DEMO_USER_ID } from '../db/store.js';
 
 /**
- * SkillForge 2.0 — Evidence Intelligence.
+ * PivotCraft 2.0 — Evidence Intelligence.
  *
  * Proves the canonical evidence ledger exists (source, verification method,
  * classification, timestamp, result, limitations), that nothing is overstated

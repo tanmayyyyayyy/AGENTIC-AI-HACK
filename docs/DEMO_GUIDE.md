@@ -1,13 +1,13 @@
-# SkillForge AI — 3-Minute Hackathon Demo Script & Evaluator Guide
+# PivotCraft AI — 3-Minute Hackathon Demo Script & Evaluator Guide
 
 > **Local Dev URL:** `http://localhost:3000` (API at `http://localhost:5001`)  
-> **Pre-seeded Evaluator Account:** `demo.evaluator@skillforge.ai` (Aarav Sharma, Year 3 B.Tech targeting AI/ML Engineer)
+> **Pre-seeded Evaluator Account:** `demo.evaluator@pivotcraft.ai` (Aarav Sharma, Year 3 B.Tech targeting AI/ML Engineer)
 
 ---
 
 ## Quick Demo Overview (3–5 Minutes)
 
-This walkthrough demonstrates the end-to-end value proposition of SkillForge AI 2.0:
+This walkthrough demonstrates the end-to-end value proposition of PivotCraft AI 2.0:
 1. **Analyze:** Parse a target job description to uncover missing skill gaps.
 2. **Govern:** Propose an autonomous career action with human-in-the-loop approval.
 3. **Prove:** Submit practical code in the Skill Proof Lab to earn verifiable evidence.
@@ -30,7 +30,7 @@ This walkthrough demonstrates the end-to-end value proposition of SkillForge AI 
      - **Opportunity Match**
      - **Career Twin**
      - **Skill Proof Lab**
-   - *Talking point:* *"Students usually learn randomly without knowing what employers actually want. SkillForge AI connects career requirements directly to verifiable evidence."*
+   - *Talking point:* *"Students usually learn randomly without knowing what employers actually want. PivotCraft AI connects career requirements directly to verifiable evidence."*
 
 ---
 
@@ -44,7 +44,7 @@ This walkthrough demonstrates the end-to-end value proposition of SkillForge AI 
      - **Missing Skill Gaps (Red):** `Kubernetes`, `Docker`.
 4. On the missing **"Kubernetes Pod Lifecycle & Container Orchestration"** gap card, click **"Add to Career Autopilot"**.
    - A success notification confirms the action has been proposed to Autopilot.
-   - *Talking point:* *"Instead of just showing gaps, SkillForge bridges gaps straight into an actionable career plan."*
+   - *Talking point:* *"Instead of just showing gaps, PivotCraft bridges gaps straight into an actionable career plan."*
 
 ---
 
@@ -71,7 +71,7 @@ This walkthrough demonstrates the end-to-end value proposition of SkillForge AI 
    - The test runner passes all criteria.
    - The badge updates to **Verified**.
    - A direct proof record (`classification: 'direct_proof'`, `confidence: 0.95`) is written to the canonical evidence ledger.
-   - *Talking point:* *"Certificates can be faked; SkillForge AI proves actual execution through server-graded code challenges."*
+   - *Talking point:* *"Certificates can be faked; PivotCraft AI proves actual execution through server-graded code challenges."*
 
 ---
 
@@ -111,6 +111,6 @@ This walkthrough demonstrates the end-to-end value proposition of SkillForge AI 
 ## Fallback & Offline Resilience
 
 If running offline or without an active `GEMINI_API_KEY`:
-- SkillForge AI automatically operates on its built-in **Deterministic Advisory Engine**.
+- PivotCraft AI automatically operates on its built-in **Deterministic Advisory Engine**.
 - All gap calculations, roadmaps, assessments, evidence graph links, and what-if simulations function with 100% fidelity.
 - Visit **Settings &rarr; System Diagnostics** (`/settings`) to inspect live provider health and status transparently.

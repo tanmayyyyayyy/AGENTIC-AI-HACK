@@ -14,7 +14,7 @@ import type {
 } from '../../src/types/index.js';
 
 /**
- * SkillForge 2.0 — Live Skill Proof Lab.
+ * PivotCraft 2.0 — Live Skill Proof Lab.
  *
  * Extends Proof of Skill by letting the *student's actual skill gap* drive the
  * challenge. When a curated challenge already targets the gap skill it is reused

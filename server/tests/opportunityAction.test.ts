@@ -4,7 +4,7 @@ import { createApp } from '../app.js';
 import { db, DEMO_USER_ID } from '../db/store.js';
 
 /**
- * SkillForge 2.0 — Opportunity-to-Action workflow.
+ * PivotCraft 2.0 — Opportunity-to-Action workflow.
  *
  * Proves an evaluated opportunity match becomes approval-gated Career Autopilot
  * actions for missing required skills, prioritised by Skill Radar, that nothing

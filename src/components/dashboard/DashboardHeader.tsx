@@ -57,7 +57,7 @@ export const DashboardHeader: React.FC<DashboardHeaderProps> = ({
   return (
     <header className="editorial-header">
       {/* Brand: Golden Puzzle Logo + Wordmark */}
-      <Link to="/dashboard" className="editorial-brand" title="SkillForge AI Dashboard">
+      <Link to="/dashboard" className="editorial-brand" title="PivotCraft AI Dashboard">
         <div className="editorial-brand-logo">
           <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
             <rect width="34" height="34" rx="8" fill="#F3EBDD" stroke="#D9CCBA" strokeWidth="1.2" />
@@ -70,7 +70,7 @@ export const DashboardHeader: React.FC<DashboardHeaderProps> = ({
             />
           </svg>
         </div>
-        <span className="editorial-brand-name">SkillForge AI</span>
+        <span className="editorial-brand-name">PivotCraft AI</span>
       </Link>
 
       {/* Right Pills & Menu */}

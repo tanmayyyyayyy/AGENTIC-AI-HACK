@@ -132,7 +132,7 @@ export class PdfDocument {
   constructor(options: { pageWidth?: number; pageHeight?: number; footerLeft?: string } = {}) {
     this.pageWidth = options.pageWidth ?? 595.28; // A4 portrait
     this.pageHeight = options.pageHeight ?? 841.89;
-    this.footerLeft = options.footerLeft ?? 'SkillForge AI';
+    this.footerLeft = options.footerLeft ?? 'PivotCraft AI';
     this.addPage();
   }
 
