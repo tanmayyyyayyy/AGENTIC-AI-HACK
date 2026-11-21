@@ -3,6 +3,7 @@ import { useNavigate, useSearchParams, Link } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext.js';
 import { useToast } from '../context/ToastContext.js';
 import { Sparkles, LogIn, UserPlus, ShieldCheck } from 'lucide-react';
+import { PivotLogoMark } from '../components/PivotLogo.js';
 
 export const AuthPage: React.FC = () => {
   const [searchParams] = useSearchParams();
@@ -104,9 +105,7 @@ export const AuthPage: React.FC = () => {
             style={{ fontSize: '1.35rem', justifyContent: 'center' }}
             aria-label="PivotCraft home"
           >
-            <span className="pivot-mark">
-              <span /><span /><span />
-            </span>
+            <PivotLogoMark size={34} />
             <span>pivotcraft<span className="pivot-wordmark-dot">.</span></span>
           </Link>
           <h2

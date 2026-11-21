@@ -67,7 +67,7 @@ export async function inspectPublicRepository(
         'Accept': 'application/vnd.github.v3+json',
         'User-Agent': 'PivotCraft-Career-Intelligence'
       },
-      signal: AbortSignal.timeout(5000)
+      signal: AbortSignal.timeout(2000)
     });
 
     if (res.ok) {

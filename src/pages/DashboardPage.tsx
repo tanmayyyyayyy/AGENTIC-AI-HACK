@@ -5,6 +5,7 @@ import { useToast } from '../context/ToastContext.js';
 import { api } from '../services/api.js';
 import type { CareerReadinessScore, LearningActivityLog, OpportunityMatchResult, ProjectRecommendation, RoadmapResult, SkillGapAnalysisResult } from '../types/index.js';
 import { ArrowDownRight, ArrowRight, ArrowUpRight, BriefcaseBusiness, Check, Compass, Crosshair, Layers3, Map, ScanSearch, Sparkles, Timer, WandSparkles } from 'lucide-react';
+import { PivotLogoMark } from '../components/PivotLogo.js';
 
 function initials(name: string): string {
   return name.split(/\s+/).filter(Boolean).slice(0, 2).map(part => part[0]?.toUpperCase()).join('') || 'Y';
@@ -92,7 +93,7 @@ export const DashboardPage: React.FC = () => {
       <div className="pivot-atmosphere" aria-hidden="true" />
       <header className="pivot-topbar">
         <Link to="/dashboard" className="pivot-wordmark" aria-label="PivotCraft home">
-          <span className="pivot-mark"><span /><span /><span /></span>
+          <PivotLogoMark size={30} />
           <span>pivotcraft<span className="pivot-wordmark-dot">.</span></span>
         </Link>
         <nav className="pivot-topnav" aria-label="Quick navigation">

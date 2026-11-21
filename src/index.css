@@ -4,6 +4,14 @@
   --font-serif: 'DM Serif Display', 'Playfair Display', Georgia, serif;
   --font-mono: 'JetBrains Mono', monospace;
 
+  /* Global Pivot Theme Tokens */
+  --pivot-lime: #d8ff68;
+  --pivot-mint: #70ead8;
+  --pivot-coral: #ff806b;
+  --pivot-lavender: #c8b9ff;
+  --pivot-ink: #101a39;
+  --pivot-panel: #172447;
+
   /* Dark Cyber-Navy Pivot Studio Palette */
   --color-background: #0c1531;
   --color-paper: #172447;
@@ -1920,9 +1928,31 @@ button {
 }
 .pivot-wordmark { display: inline-flex; align-items: center; gap: .7rem; color: white; text-decoration: none; font-size: 1.08rem; font-weight: 760; letter-spacing: -.045em; }
 .pivot-wordmark-dot { color: var(--pivot-lime); }
-.pivot-mark { width: 31px; height: 31px; border: 1px solid rgba(216,255,104,.6); border-radius: 10px; display: flex; align-items: end; justify-content: center; gap: 2px; padding: 7px; transform: rotate(-7deg); box-shadow: 0 0 20px rgba(216,255,104,.13); }
-.pivot-mark span { width: 3px; border-radius: 5px; background: var(--pivot-lime); }
-.pivot-mark span:nth-child(1) { height: 8px; }.pivot-mark span:nth-child(2) { height: 15px; }.pivot-mark span:nth-child(3) { height: 11px; }
+.pivot-mark {
+  width: 32px;
+  height: 32px;
+  border: 1.5px solid rgba(216, 255, 104, 0.75);
+  border-radius: 10px;
+  display: inline-flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 3px;
+  padding: 6px;
+  transform: rotate(-6deg);
+  box-shadow: 0 0 16px rgba(216, 255, 104, 0.2);
+  flex-shrink: 0;
+  box-sizing: border-box;
+}
+.pivot-mark span {
+  width: 3.5px;
+  border-radius: 4px;
+  background: #d8ff68 !important;
+  display: block !important;
+  flex-shrink: 0;
+}
+.pivot-mark span:nth-child(1) { height: 9px; }
+.pivot-mark span:nth-child(2) { height: 16px; }
+.pivot-mark span:nth-child(3) { height: 12px; }
 .pivot-topnav { display: flex; gap: clamp(1rem, 3vw, 2.4rem); margin-left: auto; margin-right: 1.3rem; }
 .pivot-topnav a { color: #bfc8dd; text-decoration: none; font-size: .78rem; font-weight: 620; transition: color .2s ease; }
 .pivot-topnav a:hover { color: var(--pivot-lime); }

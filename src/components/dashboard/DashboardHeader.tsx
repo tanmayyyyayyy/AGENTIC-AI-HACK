@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext.js';
+import { PivotLogoMark } from '../PivotLogo.js';
 import {
   Compass,
   Bot,
@@ -58,9 +59,7 @@ export const DashboardHeader: React.FC<DashboardHeaderProps> = ({
     <header className="editorial-header">
       {/* Brand: Golden Puzzle Logo + Wordmark */}
       <Link to="/dashboard" className="pivot-wordmark" title="PivotCraft AI Dashboard" style={{ textDecoration: 'none' }}>
-        <span className="pivot-mark">
-          <span /><span /><span />
-        </span>
+        <PivotLogoMark size={30} />
         <span style={{ fontSize: '1.15rem', fontWeight: 800, color: '#ffffff' }}>
           pivotcraft<span className="pivot-wordmark-dot">.</span>
         </span>

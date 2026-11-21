@@ -3,6 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext.js';
 import { useToast } from '../context/ToastContext.js';
 import { Navbar } from '../components/Navbar.js';
+import { PivotLogoMark } from '../components/PivotLogo.js';
 import {
   Sparkles,
   ArrowRight,
@@ -512,9 +513,7 @@ export const LandingPage: React.FC = () => {
           }}
         >
           <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', color: '#ffffff', fontWeight: 750 }}>
-            <span className="pivot-mark" style={{ width: 24, height: 24, padding: 5 }}>
-              <span /><span /><span />
-            </span>
+            <PivotLogoMark size={24} />
             <span>pivotcraft<span className="pivot-wordmark-dot">.</span></span>
           </div>
           <div>PRODUCT SPACE AI HACKATHON &bull; PROBLEM 5: CAREER PIVOT COACH (TEAM CRADUO)</div>

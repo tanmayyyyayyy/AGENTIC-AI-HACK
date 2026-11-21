@@ -3,6 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext.js';
 import { useToast } from '../context/ToastContext.js';
 import { Sparkles, LayoutDashboard, LogIn, UserPlus, LogOut } from 'lucide-react';
+import { PivotLogoMark } from './PivotLogo.js';
 
 export const Navbar: React.FC = () => {
   const { user, logout, demoLogin } = useAuth();
@@ -23,9 +24,7 @@ export const Navbar: React.FC = () => {
     <header className="pivot-navbar no-print">
       <div style={{ display: 'flex', alignItems: 'center', gap: '2.5rem' }}>
         <Link to="/" className="pivot-wordmark" aria-label="PivotCraft home">
-          <span className="pivot-mark">
-            <span /><span /><span />
-          </span>
+          <PivotLogoMark size={30} />
           <span>pivotcraft<span className="pivot-wordmark-dot">.</span></span>
         </Link>
 

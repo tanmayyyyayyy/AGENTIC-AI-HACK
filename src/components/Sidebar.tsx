@@ -1,6 +1,7 @@
 import React from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext.js';
+import { PivotLogoMark } from './PivotLogo.js';
 import {
   LayoutDashboard,
   User,
@@ -125,9 +126,7 @@ export const Sidebar: React.FC = () => {
         }}
       >
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
-          <span className="pivot-mark">
-            <span /><span /><span />
-          </span>
+          <PivotLogoMark size={32} />
           <div>
             <span style={{ fontWeight: 800, fontSize: '1.15rem', color: '#ffffff', letterSpacing: '-0.03em' }}>
               pivotcraft<span className="pivot-wordmark-dot">.</span>
