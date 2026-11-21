@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext.js';
 import { useToast } from '../context/ToastContext.js';
 import { api } from '../services/api.js';
-import type { CareerReadinessScore, LearningActivityLog, ProjectRecommendation, RoadmapResult, SkillGapAnalysisResult } from '../types/index.js';
-import { ArrowDownRight, ArrowRight, ArrowUpRight, BriefcaseBusiness, Check, Compass, Layers3, Map, Sparkles, Timer, WandSparkles } from 'lucide-react';
+import type { CareerReadinessScore, LearningActivityLog, OpportunityMatchResult, ProjectRecommendation, RoadmapResult, SkillGapAnalysisResult } from '../types/index.js';
+import { ArrowDownRight, ArrowRight, ArrowUpRight, BriefcaseBusiness, Check, Compass, Crosshair, Layers3, Map, ScanSearch, Sparkles, Timer, WandSparkles } from 'lucide-react';
 
 function initials(name: string): string {
   return name.split(/\s+/).filter(Boolean).slice(0, 2).map(part => part[0]?.toUpperCase()).join('') || 'Y';
@@ -20,6 +20,10 @@ export const DashboardPage: React.FC = () => {
   const [activities, setActivities] = useState<LearningActivityLog[]>([]);
   const [loading, setLoading] = useState(true);
   const [hoursPerWeek, setHoursPerWeek] = useState(profile?.weeklyHours || 8);
+  const [jobDraft, setJobDraft] = useState('');
+  const [flightMatch, setFlightMatch] = useState<OpportunityMatchResult | null>(null);
+  const [scanBusy, setScanBusy] = useState(false);
+  const [focusMissingSkill, setFocusMissingSkill] = useState('');
 
   const loadDashboard = useCallback(async () => {
     try {
@@ -37,6 +41,24 @@ export const DashboardPage: React.FC = () => {
       setLoading(false);
     }
   }, [toast]);
+
+  const runFlightSimulation = async (event: React.FormEvent) => {
+    event.preventDefault();
+    if (jobDraft.trim().length < 80) {
+      toast.info('Paste a few lines from the job description so the role scan has real requirements to compare.');
+      return;
+    }
+    try {
+      setScanBusy(true);
+      const result = await api.opportunityMatch.evaluate({ description: jobDraft.trim() });
+      setFlightMatch(result.match);
+      setFocusMissingSkill(result.match.requiredSkillsMissing[0]?.skillId || result.match.preferredSkillsMissing[0]?.skillId || '');
+    } catch (error: any) {
+      toast.error(error?.message || 'The role scan could not be completed.');
+    } finally {
+      setScanBusy(false);
+    }
+  };
 
   useEffect(() => { void loadDashboard(); }, [loadDashboard]);
   useEffect(() => { if (profile?.weeklyHours) setHoursPerWeek(profile.weeklyHours); }, [profile?.weeklyHours]);
@@ -165,6 +187,53 @@ export const DashboardPage: React.FC = () => {
               </div>
             </article>
           </aside>
+        </section>
+
+        <section className="pivot-flightlab" aria-labelledby="pivot-flightlab-title">
+          <div className="pivot-flightlab-heading">
+            <div>
+              <div className="pivot-flightlab-kicker"><Crosshair size={15} /> THE VACANCY FLIGHT SIMULATOR <span>LIVE ROLE / YOUR EVIDENCE</span></div>
+              <h2 id="pivot-flightlab-title">Before you apply,<br /><em>stress-test the role.</em></h2>
+              <p>Use an actual job post. We’ll compare its stated requirements with your recorded skills, then show what one focused proof sprint could change.</p>
+            </div>
+            <div className="pivot-flightlab-orbit" aria-hidden="true"><span className="orbit-core"/><span className="orbit-ring orbit-ring-one"/><span className="orbit-ring orbit-ring-two"/><i>ROLE<br/>SIGNAL</i></div>
+          </div>
+          <form onSubmit={runFlightSimulation} className="pivot-flightlab-form">
+            <label htmlFor="pivot-job-description">PASTE THE JOB DESCRIPTION</label>
+            <textarea id="pivot-job-description" value={jobDraft} onChange={event => setJobDraft(event.target.value)} placeholder="Paste the requirements, responsibilities, and skills from a role you’re considering…" rows={4} />
+            <div className="pivot-flightlab-form-footer"><span><ScanSearch size={14}/> Compared with your saved profile · not a hiring score</span><button type="submit" disabled={scanBusy || !jobDraft.trim()}>{scanBusy ? 'Mapping the role…' : 'Run the role scan'} <ArrowRight size={15}/></button></div>
+          </form>
+
+          {flightMatch ? (() => {
+            const requiredTotal = flightMatch.requiredSkillsMatched.length + flightMatch.requiredSkillsMissing.length;
+            const preferredTotal = flightMatch.preferredSkillsMatched.length + flightMatch.preferredSkillsMissing.length;
+            const allGaps = [...flightMatch.requiredSkillsMissing, ...flightMatch.preferredSkillsMissing];
+            const selectedGap = allGaps.find(skill => skill.skillId === focusMissingSkill);
+            const exactScenarioLift = selectedGap
+              ? Math.round((selectedGap.requirementType === 'required' ? (requiredTotal ? .75 / requiredTotal : 0) : (preferredTotal ? .25 / preferredTotal : 0)) * 100)
+              : 0;
+            const afterProof = Math.min(100, flightMatch.overallSkillAlignmentPercentage + exactScenarioLift);
+            return <div className="pivot-flightlab-results" aria-live="polite">
+              <div className="flightlab-score-panel">
+                <span className="pivot-label">EVIDENCE ALIGNMENT · {flightMatch.company || flightMatch.jobTitle}</span>
+                <div className="flightlab-score-row"><strong>{flightMatch.overallSkillAlignmentPercentage}<small>%</small></strong><div><span className="flightlab-eligibility">{flightMatch.statedRequirementsEligibility}</span><span className="flightlab-role-title">{flightMatch.jobTitle}</span></div></div>
+                <div className="flightlab-bar"><span style={{ width: `${flightMatch.overallSkillAlignmentPercentage}%` }}/><i style={{ left: `${afterProof}%` }}/></div>
+                <div className="flightlab-bar-legend"><span><i/> Recorded evidence now</span><span><i/> After one proof sprint*</span></div>
+                <p>This is a skills-to-requirements comparison, not a hiring prediction. Experience, timing, competition, and interviews also matter.</p>
+              </div>
+              <div className="flightlab-proof-panel">
+                <div className="flightlab-proof-heading"><span className="pivot-label">ONE CHANGE, TRACEABLE IMPACT</span><span className="flightlab-proof-count">{allGaps.length} signals to strengthen</span></div>
+                {allGaps.length ? <>
+                  <label htmlFor="flightlab-gap">Choose one missing requirement to prove</label>
+                  <select id="flightlab-gap" value={focusMissingSkill} onChange={event => setFocusMissingSkill(event.target.value)}>{allGaps.map(skill => <option key={`${skill.requirementType}-${skill.skillId}`} value={skill.skillId}>{skill.name} · {skill.requirementType}</option>)}</select>
+                  <div className="flightlab-counterfactual"><span className="flightlab-counter-icon"><Sparkles size={17}/></span><div><small>IF YOU ADD EVIDENCE FOR THIS SKILL</small><strong>{flightMatch.overallSkillAlignmentPercentage}% <ArrowRight size={14}/> {afterProof}%</strong></div><span className="flightlab-lift">+{exactScenarioLift} pts</span></div>
+                  <p className="flightlab-explanation">*What-if uses the match engine’s 75% required / 25% preferred weighting and assumes this skill is demonstrated at the stated level. A course alone does not count as proof.</p>
+                  <div className="flightlab-buttons"><Link to="/proof-of-skill">Prove a skill <ArrowUpRight size={14}/></Link><Link to="/project-forge">Build a project <ArrowUpRight size={14}/></Link></div>
+                </> : <div className="flightlab-no-gaps"><span><Check size={16}/></span><div><strong>No missing skills detected in this posting.</strong><p>Try another role or strengthen your interview story.</p></div><Link to="/interview-arena">Practice interview <ArrowRight size={14}/></Link></div>}
+                <div className="flightlab-trace">{flightMatch.explainabilityTrace.slice(0, 2).map(item => <span key={item.dimension}><b>{item.dimension}</b>{item.sourceEvidence}</span>)}</div>
+              </div>
+            </div>;
+          })() : <div className="pivot-flightlab-empty"><span><BriefcaseBusiness size={18}/></span><div><strong>Bring a real opportunity into the simulator.</strong><p>The scan returns matched skills, missing evidence, and a transparent one-skill what-if.</p></div></div>}
         </section>
 
         <section className="pivot-bottom-grid">
