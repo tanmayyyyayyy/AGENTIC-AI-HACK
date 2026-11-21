@@ -2071,3 +2071,110 @@ button {
 @media (max-width: 780px) { .pivot-flightlab-results { grid-template-columns: minmax(0,1fr); } }
 @media (max-width: 600px) { .pivot-flightlab-heading { align-items: flex-start; }.pivot-flightlab-orbit { flex-basis: 90px; width: 90px; height: 90px; transform: scale(.78); transform-origin: top right; margin-right: -.6rem; }.pivot-flightlab-form-footer { align-items: flex-start; flex-direction: column; }.pivot-flightlab-form-footer button { align-self: stretch; justify-content: center; }.flightlab-proof-heading { align-items: flex-start; flex-direction: column; }.flightlab-trace { grid-template-columns: minmax(0,1fr); }.flightlab-no-gaps { flex-wrap: wrap; }.flightlab-no-gaps a { margin-left: 2.2rem; } }
 
+/* ==================================================
+   PIVOTCRAFT LANDING PAGE & UNIVERSAL TOPBAR (DARK UI)
+   ================================================== */
+.pivot-landing-root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  isolation: isolate;
+  background: #0c1531;
+  color: #f7f7f2;
+  font-family: var(--font-sans);
+}
+
+.pivot-navbar {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  min-height: 72px;
+  background: rgba(12, 21, 49, 0.92);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 clamp(1.2rem, 4vw, 3.5rem);
+}
+
+.pivot-cta-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.85rem 1.6rem;
+  border-radius: 99px;
+  background: var(--pivot-lime, #d8ff68);
+  color: #101a39;
+  font-weight: 800;
+  font-size: 0.95rem;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 0 24px rgba(216, 255, 104, 0.28);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.pivot-cta-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(216, 255, 104, 0.45);
+  color: #101a39;
+}
+
+.pivot-cta-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.85rem 1.6rem;
+  border-radius: 99px;
+  background: rgba(255, 255, 255, 0.07);
+  color: #f7f7f2;
+  font-weight: 700;
+  font-size: 0.95rem;
+  text-decoration: none;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  cursor: pointer;
+  backdrop-filter: blur(8px);
+  transition: transform 0.2s, background 0.2s, border-color 0.2s;
+}
+.pivot-cta-secondary:hover {
+  transform: translateY(-2px);
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(216, 255, 104, 0.5);
+  color: #ffffff;
+}
+
+.pivot-glass-card {
+  background: rgba(23, 36, 71, 0.65);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 18px;
+  padding: 2rem;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 16px 36px rgba(5, 11, 27, 0.35);
+  transition: transform 0.22s, border-color 0.22s, box-shadow 0.22s;
+}
+.pivot-glass-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(216, 255, 104, 0.3);
+  box-shadow: 0 20px 44px rgba(5, 11, 27, 0.5);
+}
+
+.pivot-preview-window {
+  margin-top: 4rem;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(16, 26, 57, 0.85);
+  backdrop-filter: blur(16px);
+  overflow: hidden;
+  box-shadow: 0 24px 60px rgba(4, 9, 23, 0.65), 0 0 40px rgba(55, 88, 174, 0.18);
+}
+.pivot-preview-bar {
+  background: rgba(8, 15, 36, 0.85);
+  padding: 0.85rem 1.4rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+

@@ -2,10 +2,10 @@ import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext.js';
 import { useToast } from '../context/ToastContext.js';
-import { Layers, Sparkles, LogIn, UserPlus, LogOut, LayoutDashboard } from 'lucide-react';
+import { Sparkles, LayoutDashboard, LogIn, UserPlus, LogOut } from 'lucide-react';
 
 export const Navbar: React.FC = () => {
-  const { user, isDemo, logout, demoLogin } = useAuth();
+  const { user, logout, demoLogin } = useAuth();
   const navigate = useNavigate();
   const toast = useToast();
 
@@ -20,87 +20,44 @@ export const Navbar: React.FC = () => {
   };
 
   return (
-    <header
-      className="no-print"
-      style={{
-        height: 'var(--header-height)',
-        background: 'rgba(213, 201, 185, 0.92)',
-        backdropFilter: 'blur(12px)',
-        borderBottom: '1px solid var(--border-subtle)',
-        position: 'sticky',
-        top: 0,
-        zIndex: 50,
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'space-between',
-        padding: '0 2rem'
-      }}
-    >
+    <header className="pivot-navbar no-print">
       <div style={{ display: 'flex', alignItems: 'center', gap: '2.5rem' }}>
-        <Link
-          to="/"
-          style={{
-            display: 'flex',
-            alignItems: 'center',
-            gap: '0.65rem',
-            color: 'var(--text-primary)',
-            fontFamily: 'var(--font-display)',
-            fontWeight: 800,
-            fontSize: '1.25rem',
-            letterSpacing: '-0.02em'
-          }}
-        >
-          <div
-            style={{
-              width: 34,
-              height: 34,
-              borderRadius: 8,
-              background: 'linear-gradient(135deg, #D38A19 0%, #B27010 100%)',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              boxShadow: '0 2px 10px rgba(211, 138, 25, 0.3)'
-            }}
-          >
-            <Layers size={20} color="#ffffff" />
-          </div>
-          <span>PivotCraft <span style={{ color: 'var(--color-accent)' }}>AI</span></span>
+        <Link to="/" className="pivot-wordmark" aria-label="PivotCraft home">
+          <span className="pivot-mark">
+            <span /><span /><span />
+          </span>
+          <span>pivotcraft<span className="pivot-wordmark-dot">.</span></span>
         </Link>
 
-        <nav style={{ display: 'flex', alignItems: 'center', gap: '1.5rem' }} className="desktop-nav">
-          <a href="#how-it-works" style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', fontWeight: 500 }}>
+        <nav style={{ display: 'flex', alignItems: 'center', gap: '1.8rem' }} className="desktop-nav">
+          <a href="#how-it-works" style={{ color: '#bfc8dd', fontSize: '0.82rem', fontWeight: 600, textDecoration: 'none' }}>
             How It Works
           </a>
-          <a href="#features" style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', fontWeight: 500 }}>
-            Features
+          <a href="#problem-5" style={{ color: '#bfc8dd', fontSize: '0.82rem', fontWeight: 600, textDecoration: 'none' }}>
+            Problem 5
           </a>
-          <a href="#roles" style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', fontWeight: 500 }}>
-            Career Tracks
+          <a href="#features" style={{ color: '#bfc8dd', fontSize: '0.82rem', fontWeight: 600, textDecoration: 'none' }}>
+            Capabilities
           </a>
         </nav>
       </div>
 
-      <div style={{ display: 'flex', alignItems: 'center', gap: '0.85rem' }}>
+      <div style={{ display: 'flex', alignItems: 'center', gap: '0.9rem' }}>
         <button
           onClick={handleDemoClick}
-          className="btn btn-secondary btn-sm"
-          style={{
-            background: 'rgba(211, 138, 25, 0.12)',
-            borderColor: 'rgba(211, 138, 25, 0.35)',
-            color: 'var(--color-accent)',
-            fontWeight: 600
-          }}
+          className="pivot-cta-secondary"
+          style={{ padding: '0.55rem 1.15rem', fontSize: '0.82rem', borderColor: 'rgba(216, 255, 104, 0.4)', color: '#d8ff68' }}
           title="Instant 1-Click Evaluation for Hackathon Judges"
         >
-          <Sparkles size={14} color="var(--color-accent)" />
-          Explore Demo
+          <Sparkles size={14} color="#d8ff68" />
+          <span>Explore Demo</span>
         </button>
 
         {user ? (
-          <div style={{ display: 'flex', alignItems: 'center', gap: '0.85rem' }}>
-            <Link to="/dashboard" className="btn btn-primary btn-sm">
-              <LayoutDashboard size={15} />
-              Dashboard
+          <div style={{ display: 'flex', alignItems: 'center', gap: '0.8rem' }}>
+            <Link to="/dashboard" className="pivot-cta-primary" style={{ padding: '0.55rem 1.2rem', fontSize: '0.82rem' }}>
+              <LayoutDashboard size={14} />
+              <span>Studio</span>
             </Link>
             <button
               onClick={() => {
@@ -109,6 +66,7 @@ export const Navbar: React.FC = () => {
                 navigate('/');
               }}
               className="btn btn-ghost btn-sm"
+              style={{ color: '#9aa9c5' }}
               title="Sign Out"
               aria-label="Sign Out"
             >
@@ -117,13 +75,13 @@ export const Navbar: React.FC = () => {
           </div>
         ) : (
           <div style={{ display: 'flex', alignItems: 'center', gap: '0.65rem' }}>
-            <Link to="/auth" className="btn btn-ghost btn-sm">
-              <LogIn size={15} />
+            <Link to="/auth" style={{ color: '#bfc8dd', fontSize: '0.82rem', fontWeight: 600, textDecoration: 'none', padding: '0.5rem 0.8rem' }}>
+              <LogIn size={14} style={{ display: 'inline', verticalAlign: 'middle', marginRight: 4 }} />
               Sign In
             </Link>
-            <Link to="/auth?mode=register" className="btn btn-primary btn-sm">
-              <UserPlus size={15} />
-              Get Started
+            <Link to="/auth?mode=register" className="pivot-cta-primary" style={{ padding: '0.55rem 1.15rem', fontSize: '0.82rem' }}>
+              <UserPlus size={14} />
+              <span>Get Started</span>
             </Link>
           </div>
         )}

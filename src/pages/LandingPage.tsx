@@ -16,7 +16,11 @@ import {
   ShieldCheck,
   AlertTriangle,
   FolderGit2,
-  Layers
+  Layers,
+  ArrowUpRight,
+  BriefcaseBusiness,
+  MapPin,
+  Bot
 } from 'lucide-react';
 
 export const LandingPage: React.FC = () => {
@@ -35,389 +39,419 @@ export const LandingPage: React.FC = () => {
   };
 
   return (
-    <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', background: 'var(--bg-main)' }}>
+    <div className="pivot-landing-root">
+      <div className="pivot-atmosphere" aria-hidden="true" />
       <Navbar />
 
       <main style={{ flex: 1 }}>
         {/* HERO SECTION */}
         <section
           style={{
-            padding: '5rem 2rem 4rem',
+            padding: '4.5rem 1.5rem 3.5rem',
             textAlign: 'center',
-            maxWidth: 1100,
+            maxWidth: 1200,
             margin: '0 auto',
             position: 'relative'
           }}
         >
-          {/* Subtle glow backdrop */}
+          {/* Eyebrow badge */}
           <div
+            className="pivot-eyebrow"
             style={{
-              position: 'absolute',
-              top: '20%',
-              left: '50%',
-              transform: 'translate(-50%, -50%)',
-              width: 500,
-              height: 300,
-              background: 'radial-gradient(circle, rgba(211, 138, 25, 0.12) 0%, rgba(178, 112, 16, 0.04) 50%, transparent 70%)',
-              pointerEvents: 'none',
-              zIndex: 0
-            }}
-          />
-
-          <div style={{ position: 'relative', zIndex: 1 }}>
-            <div
-              style={{
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: '0.5rem',
-                padding: '0.35rem 0.9rem',
-                background: 'rgba(211, 138, 25, 0.1)',
-                border: '1px solid rgba(211, 138, 25, 0.3)',
-                borderRadius: 'var(--radius-full)',
-                color: 'var(--color-accent)',
-                fontSize: '0.85rem',
-                fontWeight: 600,
-                marginBottom: '1.5rem'
-              }}
-            >
-              <Sparkles size={15} color="var(--color-accent)" />
-              <span>Product Space AI Hackathon · Problem 5</span>
-            </div>
-
-            <h1
-              style={{
-                fontFamily: 'var(--font-serif)',
-                fontSize: 'clamp(2.4rem, 5vw, 3.8rem)',
-                fontWeight: 600,
-                letterSpacing: '-0.02em',
-                marginBottom: '1.5rem',
-                lineHeight: 1.15,
-                color: 'var(--text-primary)'
-              }}
-            >
-              Stop Learning Randomly.{' '}
-              <br />
-              <span
-                style={{
-                  background: 'linear-gradient(135deg, #D38A19 0%, #B27010 60%, #8C5507 100%)',
-                  WebkitBackgroundClip: 'text',
-                  WebkitTextFillColor: 'transparent'
-                }}
-              >
-                Build Skills That Get You Hired.
-              </span>
-            </h1>
-
-            <p
-              style={{
-                fontSize: 'clamp(1.05rem, 2vw, 1.25rem)',
-                color: 'var(--text-secondary)',
-                maxWidth: 720,
-                margin: '0 auto 2.5rem',
-                lineHeight: 1.6
-              }}
-            >
-              Pivot into a new career with a plan grounded in real job descriptions: map skill gaps, build proof, practice interviews, and learn from your application outcomes.
-            </p>
-
-            <div
-              style={{
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                gap: '1rem',
-                flexWrap: 'wrap'
-              }}
-            >
-              <Link to={user ? "/dashboard" : "/auth?mode=register"} className="btn btn-primary btn-lg">
-                <span>Build My Pivot Plan</span>
-                <ArrowRight size={18} />
-              </Link>
-
-              <button onClick={handleDemo} className="btn btn-secondary btn-lg" style={{ background: 'var(--bg-card)', borderColor: 'var(--border-medium)' }}>
-                <Sparkles size={18} color="var(--color-accent)" />
-                <span>Explore Demo</span>
-              </button>
-            </div>
-          </div>
-
-          {/* REALISTIC DASHBOARD PREVIEW */}
-          <div
-            style={{
-              marginTop: '4rem',
-              borderRadius: 'var(--radius-lg)',
-              border: '1px solid var(--border-medium)',
-              background: 'var(--bg-card)',
-              overflow: 'hidden',
-              boxShadow: '0 20px 40px -10px rgba(48, 35, 25, 0.15)',
-              textAlign: 'left'
+              justifyContent: 'center',
+              marginBottom: '1.4rem'
             }}
           >
-            {/* Mock Header Window Bar */}
-            <div
+            <span className="pivot-live-dot" /> PRODUCT SPACE AI HACKATHON <span className="pivot-eyebrow-slash">/</span> PROBLEM 5: CAREER PIVOT COACH
+          </div>
+
+          {/* Main Title */}
+          <h1
+            style={{
+              fontFamily: 'var(--font-serif)',
+              fontSize: 'clamp(2.5rem, 5.5vw, 4.5rem)',
+              fontWeight: 680,
+              letterSpacing: '-0.05em',
+              lineHeight: 1.05,
+              color: '#ffffff',
+              margin: '0 auto 1.4rem',
+              maxWidth: 960
+            }}
+          >
+            Stop Learning Randomly.<br />
+            <em
               style={{
-                background: 'rgba(48, 35, 25, 0.05)',
-                padding: '0.75rem 1.25rem',
-                borderBottom: '1px solid var(--border-subtle)',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'space-between'
+                color: 'var(--pivot-lime, #d8ff68)',
+                fontStyle: 'normal',
+                fontFamily: 'var(--font-serif)',
+                fontWeight: 500
               }}
             >
-              <div style={{ display: 'flex', alignItems: 'center', gap: '0.45rem' }}>
-                <div style={{ width: 11, height: 11, borderRadius: '50%', background: '#ef4444' }} />
-                <div style={{ width: 11, height: 11, borderRadius: '50%', background: '#f59e0b' }} />
-                <div style={{ width: 11, height: 11, borderRadius: '50%', background: '#10b981' }} />
-                <span style={{ marginLeft: '0.75rem', fontSize: '0.8rem', color: 'var(--text-muted)' }}>
-                  PivotCraft AI / Career Intelligence Cockpit &mdash; Target: AI/ML Engineer
+              Build Skills That Get You Hired.
+            </em>
+          </h1>
+
+          <p
+            style={{
+              fontSize: 'clamp(1.02rem, 2vw, 1.22rem)',
+              color: '#bac4d9',
+              maxWidth: 740,
+              margin: '0 auto 2.5rem',
+              lineHeight: 1.6
+            }}
+          >
+            Pivot into a new engineering career with a plan grounded in real job descriptions: map skill gaps, build verifiable proof, practice rubric-scored interviews, and learn from application response patterns.
+          </p>
+
+          <div
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              gap: '1rem',
+              flexWrap: 'wrap'
+            }}
+          >
+            <Link to={user ? "/dashboard" : "/demo"} className="pivot-cta-primary">
+              <span>Build My Pivot Plan</span>
+              <ArrowRight size={17} />
+            </Link>
+
+            <button onClick={handleDemo} className="pivot-cta-secondary">
+              <Sparkles size={16} color="var(--pivot-lime, #d8ff68)" />
+              <span>Explore Demo (Aarav Sharma)</span>
+            </button>
+          </div>
+
+          {/* COCKPIT PREVIEW WINDOW (MATCHING PIVOT STUDIO UI) */}
+          <div className="pivot-preview-window" aria-label="Interactive Pivot Studio Preview">
+            <div className="pivot-preview-bar">
+              <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                <div style={{ width: 11, height: 11, borderRadius: '50%', background: '#ff5f56' }} />
+                <div style={{ width: 11, height: 11, borderRadius: '50%', background: '#ffbd2e' }} />
+                <div style={{ width: 11, height: 11, borderRadius: '50%', background: '#27c93f' }} />
+                <span style={{ marginLeft: '0.8rem', fontSize: '0.74rem', color: '#90a0be', fontWeight: 650, letterSpacing: '0.04em' }}>
+                  PIVOTCRAFT STUDIO / ROUTE 01 · LIVE COCKPIT
                 </span>
               </div>
-              <span className="badge badge-medium">Live System Active</span>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem' }}>
+                <span className="pivot-label" style={{ color: 'var(--pivot-lime, #d8ff68)', fontSize: '0.64rem' }}>
+                  <span className="pivot-live-dot" /> TARGET: AI/ML ENGINEER
+                </span>
+              </div>
             </div>
 
-            {/* Dashboard Embedded Mock Content */}
-            <div style={{ padding: '2rem', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '1.5rem' }}>
-              <div className="card" style={{ background: 'var(--bg-surface)' }}>
-                <div style={{ fontSize: '0.85rem', color: 'var(--text-secondary)', marginBottom: '0.4rem' }}>
-                  Explainable Readiness Score
+            {/* Simulated Route Preview */}
+            <div style={{ padding: '2rem', display: 'grid', gridTemplateColumns: 'minmax(0, 1.7fr) minmax(260px, 1fr)', gap: '1.5rem', textAlign: 'left' }}>
+              {/* Route Map Card */}
+              <div
+                style={{
+                  background: 'rgba(23, 36, 71, 0.7)',
+                  borderRadius: 16,
+                  border: '1px solid rgba(255, 255, 255, 0.1)',
+                  padding: '1.5rem',
+                  position: 'relative',
+                  overflow: 'hidden'
+                }}
+              >
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem' }}>
+                  <span className="pivot-label"><MapPin size={13} /> THE PIVOT MAP</span>
+                  <span style={{ fontSize: '0.68rem', color: 'var(--pivot-mint, #70ead8)', fontWeight: 700 }}>ROUTE 01 · ACTIVE</span>
                 </div>
-                <div style={{ display: 'flex', alignItems: 'baseline', gap: '0.5rem' }}>
-                  <span style={{ fontSize: '2.5rem', fontWeight: 800, color: 'var(--text-primary)', fontFamily: 'var(--font-display)' }}>
-                    48%
-                  </span>
-                  <span style={{ color: 'var(--success)', fontSize: '0.85rem', fontWeight: 600 }}>
-                    +6% this week
-                  </span>
-                </div>
-                <div className="progress-container" style={{ margin: '0.75rem 0' }}>
-                  <div className="progress-bar" style={{ width: '48%' }} />
-                </div>
-                <div style={{ fontSize: '0.78rem', color: 'var(--text-muted)' }}>
-                  50% Base Skills &bull; 25% Assessments &bull; 25% Portfolio Projects
-                </div>
-              </div>
-
-              <div className="card" style={{ background: 'var(--bg-surface)' }}>
-                <div style={{ fontSize: '0.85rem', color: 'var(--text-secondary)', marginBottom: '0.4rem' }}>
-                  Top Priority Skill Gap
-                </div>
-                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-                  <span style={{ fontSize: '1.2rem', fontWeight: 700 }}>PyTorch & Deep Learning</span>
-                  <span className="badge badge-critical">Critical</span>
-                </div>
-                <p style={{ fontSize: '0.82rem', color: 'var(--text-muted)', margin: '0.5rem 0' }}>
-                  Gap: 3 levels (current: 1/5, required: 4/5). Weight: 92%.
+                <div style={{ fontSize: '0.68rem', color: '#90a0bd', fontWeight: 700, letterSpacing: '0.08em' }}>YOUR FIRST WAYPOINT</div>
+                <h3 style={{ fontSize: '1.25rem', color: '#ffffff', margin: '0.3rem 0 0.5rem', fontWeight: 700 }}>
+                  Close the Deep Learning with PyTorch gap
+                </h3>
+                <p style={{ color: '#9aa9c5', fontSize: '0.82rem', margin: '0 0 1rem', lineHeight: 1.5 }}>
+                  High role importance (92%). Start with a focused learning sprint, then turn it into verifiable code proof.
                 </p>
-                <div style={{ fontSize: '0.8rem', color: 'var(--color-accent)', fontWeight: 500 }}>
-                  &rarr; Next: Tensor operations & computational graph exercises
+
+                {/* SVG Route Visualization */}
+                <div style={{ height: 160, width: '100%', position: 'relative' }}>
+                  <svg viewBox="0 0 500 160" style={{ width: '100%', height: '100%' }}>
+                    <defs>
+                      <linearGradient id="landingRouteGlow" x1="0" y1="1" x2="1" y2="0">
+                        <stop stopColor="#d8ff68" />
+                        <stop offset="1" stopColor="#70ead8" />
+                      </linearGradient>
+                    </defs>
+                    {/* Path glow */}
+                    <path
+                      d="M 40 120 C 140 125, 180 65, 260 70 S 370 110, 450 35"
+                      fill="none"
+                      stroke="#d8ff68"
+                      strokeOpacity="0.16"
+                      strokeWidth="16"
+                      strokeLinecap="round"
+                    />
+                    {/* Dashed Line */}
+                    <path
+                      d="M 40 120 C 140 125, 180 65, 260 70 S 370 110, 450 35"
+                      fill="none"
+                      stroke="url(#landingRouteGlow)"
+                      strokeWidth="3"
+                      strokeDasharray="6 7"
+                      strokeLinecap="round"
+                    />
+                    {/* Points */}
+                    <circle cx="40" cy="120" r="7" fill="#d8ff68" stroke="#0c1531" strokeWidth="3" />
+                    <circle cx="260" cy="70" r="7" fill="#ff806b" stroke="#0c1531" strokeWidth="3" />
+                    <circle cx="450" cy="35" r="8" fill="#70ead8" stroke="#0c1531" strokeWidth="3" />
+                    {/* Labels */}
+                    <text x="40" y="148" fill="#d8ff68" fontSize="11" fontWeight="700" textAnchor="middle">YOUR SKILLS</text>
+                    <text x="260" y="98" fill="#ff806b" fontSize="11" fontWeight="700" textAnchor="middle">PYTORCH GAP</text>
+                    <text x="450" y="20" fill="#70ead8" fontSize="11" fontWeight="700" textAnchor="middle">AI/ML ENGINEER</text>
+                  </svg>
                 </div>
               </div>
 
-              <div className="card" style={{ background: 'var(--bg-surface)' }}>
-                <div style={{ fontSize: '0.85rem', color: 'var(--text-secondary)', marginBottom: '0.4rem' }}>
-                  Verified Portfolio Milestone
+              {/* Side Metric Cards */}
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+                <div
+                  style={{
+                    padding: '1.25rem',
+                    borderRadius: 16,
+                    background: 'linear-gradient(135deg, rgba(255, 128, 107, 0.22), rgba(255, 128, 107, 0.08))',
+                    border: '1px solid rgba(255, 128, 107, 0.35)'
+                  }}
+                >
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                    <span className="pivot-label" style={{ color: '#ff806b', fontSize: '0.64rem' }}>CAREER SIGNAL</span>
+                    <span style={{ fontSize: '0.62rem', background: '#ff806b', color: '#101a39', fontWeight: 800, padding: '0.15rem 0.4rem', borderRadius: 99 }}>LIVE</span>
+                  </div>
+                  <div style={{ fontSize: '2.5rem', fontWeight: 800, color: '#ffffff', margin: '0.3rem 0', letterSpacing: '-0.04em' }}>
+                    29<small style={{ fontSize: '1.1rem', color: '#ff806b' }}>%</small>
+                  </div>
+                  <div style={{ fontSize: '0.74rem', color: '#d0d7e5' }}>
+                    Your current verified skill coverage for AI/ML Engineer.
+                  </div>
                 </div>
-                <div style={{ fontSize: '1.1rem', fontWeight: 700, marginBottom: '0.3rem' }}>
-                  Enterprise RAG Pipeline
-                </div>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.82rem', color: 'var(--success)' }}>
-                  <CheckCircle2 size={15} /> 2 of 4 milestones completed
-                </div>
-                <div style={{ fontSize: '0.8rem', color: 'var(--text-muted)', marginTop: '0.6rem' }}>
-                  Proves: Python, Vector DBs, FastAPI, Docker
+
+                <div
+                  style={{
+                    padding: '1.25rem',
+                    borderRadius: 16,
+                    background: 'linear-gradient(135deg, rgba(112, 234, 216, 0.18), rgba(112, 234, 216, 0.06))',
+                    border: '1px solid rgba(112, 234, 216, 0.3)'
+                  }}
+                >
+                  <span className="pivot-label" style={{ color: '#70ead8', fontSize: '0.64rem' }}>THE NEXT MOVE</span>
+                  <div style={{ fontSize: '0.98rem', fontWeight: 750, color: '#ffffff', margin: '0.4rem 0 0.3rem' }}>
+                    Make PyTorch Mastery Visible
+                  </div>
+                  <p style={{ fontSize: '0.74rem', color: '#b9cadc', margin: 0 }}>
+                    Train a multimodal embedding classifier to match product images with text queries.
+                  </p>
                 </div>
               </div>
             </div>
           </div>
         </section>
 
-        {/* THE PROBLEM SECTION */}
+        {/* THE REAL PIVOT CHALLENGE */}
         <section
+          id="problem"
           style={{
-            padding: '5rem 2rem',
-            background: 'rgba(48, 35, 25, 0.03)',
-            borderTop: '1px solid var(--border-subtle)',
-            borderBottom: '1px solid var(--border-subtle)'
+            padding: '5rem 1.5rem',
+            borderTop: '1px solid rgba(255, 255, 255, 0.08)',
+            borderBottom: '1px solid rgba(255, 255, 255, 0.08)',
+            background: 'rgba(10, 18, 43, 0.5)'
           }}
         >
-          <div style={{ maxWidth: 1100, margin: '0 auto' }}>
+          <div style={{ maxWidth: 1160, margin: '0 auto' }}>
             <div style={{ textAlign: 'center', marginBottom: '3.5rem' }}>
-              <span style={{ fontSize: '0.85rem', fontWeight: 700, color: '#ef4444', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
-                The Core Problem
-              </span>
-              <h2 style={{ fontFamily: 'var(--font-serif)', fontSize: '2.2rem', fontWeight: 600, marginTop: '0.5rem' }}>
-                Why Most Students Learn for Months Without Getting Hired
+              <div className="pivot-eyebrow" style={{ justifyContent: 'center', marginBottom: '0.6rem' }}>
+                <span className="pivot-live-dot" /> THE REAL PIVOT CHALLENGE
+              </div>
+              <h2
+                style={{
+                  fontFamily: 'var(--font-serif)',
+                  fontSize: 'clamp(2rem, 4vw, 2.8rem)',
+                  fontWeight: 650,
+                  color: '#ffffff',
+                  letterSpacing: '-0.03em'
+                }}
+              >
+                Why Most Career Switchers Struggle for Months
               </h2>
-              <p style={{ color: 'var(--text-secondary)', maxWidth: 650, margin: '0.75rem auto 0' }}>
-                Collecting certificates and watching tutorials gives an illusion of progress. Employers hire for demonstrable role readiness.
+              <p style={{ color: '#9aa9c5', maxWidth: 680, margin: '0.75rem auto 0', fontSize: '1.02rem', lineHeight: 1.5 }}>
+                Watching tutorials and collecting generic certificates gives an illusion of momentum. Employers hire for demonstrable role readiness.
               </p>
             </div>
 
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '1.75rem' }}>
-              <div className="card">
-                <AlertTriangle size={26} color="#ef4444" style={{ marginBottom: '1rem' }} />
-                <h3 style={{ fontSize: '1.15rem', marginBottom: '0.5rem' }}>Random, Unfocused Learning</h3>
-                <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', lineHeight: 1.5 }}>
-                  Jumping from one trendy framework to another without knowing if your target role actually requires it in industry production.
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '1.5rem' }}>
+              <div className="pivot-glass-card">
+                <AlertTriangle size={26} color="#ff806b" style={{ marginBottom: '1rem' }} />
+                <h3 style={{ fontSize: '1.15rem', color: '#ffffff', marginBottom: '0.5rem', fontWeight: 700 }}>Skill Opacity</h3>
+                <p style={{ color: '#9aa9c5', fontSize: '0.88rem', lineHeight: 1.5 }}>
+                  Job postings list 30 buzzwords. Learners can't decipher which core competencies actually decide who gets an interview.
                 </p>
               </div>
 
-              <div className="card">
-                <Compass size={26} color="#f59e0b" style={{ marginBottom: '1rem' }} />
-                <h3 style={{ fontSize: '1.15rem', marginBottom: '0.5rem' }}>Unclear Career Requirements</h3>
-                <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', lineHeight: 1.5 }}>
-                  Job descriptions list 30 buzzwords. Students cannot tell which 4 core skills actually decide whether they get shortlisted.
+              <div className="pivot-glass-card">
+                <Compass size={26} color="#d8ff68" style={{ marginBottom: '1rem' }} />
+                <h3 style={{ fontSize: '1.15rem', color: '#ffffff', marginBottom: '0.5rem', fontWeight: 700 }}>Learning Scatter</h3>
+                <p style={{ color: '#9aa9c5', fontSize: '0.88rem', lineHeight: 1.5 }}>
+                  Consuming disparate courses without a dependency-aware plan creates confusion and wastes months on the wrong topics.
                 </p>
               </div>
 
-              <div className="card">
-                <FolderGit2 size={26} color="#38bdf8" style={{ marginBottom: '1rem' }} />
-                <h3 style={{ fontSize: '1.15rem', marginBottom: '0.5rem' }}>Lack of Practical Evidence</h3>
-                <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', lineHeight: 1.5 }}>
-                  Generic tutorial clones (to-do apps, basic calculators) fail to prove technical competence to engineering hiring managers.
+              <div className="pivot-glass-card">
+                <FolderGit2 size={26} color="#70ead8" style={{ marginBottom: '1rem' }} />
+                <h3 style={{ fontSize: '1.15rem', color: '#ffffff', marginBottom: '0.5rem', fontWeight: 700 }}>The Evidence Gap</h3>
+                <p style={{ color: '#9aa9c5', fontSize: '0.88rem', lineHeight: 1.5 }}>
+                  Generic tutorial clones (to-do apps, basic calculators) fail to prove technical depth to engineering hiring managers.
                 </p>
               </div>
 
-              <div className="card">
-                <TrendingUp size={26} color="var(--color-accent)" style={{ marginBottom: '1rem' }} />
-                <h3 style={{ fontSize: '1.15rem', marginBottom: '0.5rem' }}>No Measurable Career Velocity</h3>
-                <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', lineHeight: 1.5 }}>
-                  Students spend hundreds of hours studying without knowing if their actions are making them 10% or 0% closer to being hireable.
+              <div className="pivot-glass-card">
+                <TrendingUp size={26} color="#c8b9ff" style={{ marginBottom: '1rem' }} />
+                <h3 style={{ fontSize: '1.15rem', color: '#ffffff', marginBottom: '0.5rem', fontWeight: 700 }}>Outcome Blindness</h3>
+                <p style={{ color: '#9aa9c5', fontSize: '0.88rem', lineHeight: 1.5 }}>
+                  Applying randomly without recording outcomes means learners never discover which role types offer real conversion momentum.
                 </p>
               </div>
             </div>
           </div>
         </section>
 
-        {/* HOW IT WORKS SECTION */}
-        <section id="how-it-works" style={{ padding: '5rem 2rem', maxWidth: 1100, margin: '0 auto' }}>
+        {/* PROBLEM 5: THE CLOSED-LOOP PIVOT ENGINE */}
+        <section id="problem-5" style={{ padding: '5.5rem 1.5rem', maxWidth: 1160, margin: '0 auto' }}>
           <div style={{ textAlign: 'center', marginBottom: '3.5rem' }}>
-            <span style={{ fontSize: '0.85rem', fontWeight: 700, color: 'var(--color-accent)', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
-              Methodology
-            </span>
-            <h2 style={{ fontFamily: 'var(--font-serif)', fontSize: '2.2rem', fontWeight: 600, marginTop: '0.5rem' }}>How PivotCraft AI Works</h2>
-            <p style={{ color: 'var(--text-secondary)', maxWidth: 600, margin: '0.75rem auto 0' }}>
-              Four structured steps to convert ambiguity into a clear, measurable hiring trajectory.
+            <div className="pivot-eyebrow" style={{ justifyContent: 'center', marginBottom: '0.6rem' }}>
+              <span className="pivot-live-dot" /> PROBLEM 5 SOLUTION ARCHITECTURE
+            </div>
+            <h2
+              style={{
+                fontFamily: 'var(--font-serif)',
+                fontSize: 'clamp(2rem, 4vw, 2.8rem)',
+                fontWeight: 650,
+                color: '#ffffff',
+                letterSpacing: '-0.03em'
+              }}
+            >
+              How PivotCraft AI Closes the Pivot Loop
+            </h2>
+            <p style={{ color: '#9aa9c5', maxWidth: 650, margin: '0.75rem auto 0', fontSize: '1.02rem', lineHeight: 1.5 }}>
+              From initial resume intake to real-world interview and offer outcomes, every step feeds the next move.
             </p>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '1.5rem' }}>
-            <div className="card" style={{ position: 'relative' }}>
-              <div style={{ fontSize: '2.5rem', fontWeight: 800, color: 'rgba(211, 138, 25, 0.25)', fontFamily: 'var(--font-display)', marginBottom: '0.5rem' }}>
-                01
-              </div>
-              <h3 style={{ fontSize: '1.1rem', marginBottom: '0.4rem' }}>Define Career Goal</h3>
-              <p style={{ color: 'var(--text-secondary)', fontSize: '0.88rem' }}>
-                Select from 8 curated industry career tracks: AI/ML Engineer, SDE, Frontend, Backend, Full-Stack, and more.
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '1.5rem' }}>
+            <div className="pivot-glass-card">
+              <span style={{ fontSize: '2rem', fontWeight: 800, color: '#d8ff68', display: 'block', marginBottom: '0.4rem', fontFamily: 'var(--font-sans)' }}>01</span>
+              <h3 style={{ fontSize: '1.15rem', color: '#ffffff', marginBottom: '0.4rem', fontWeight: 700 }}>Resume & Target-Role Intake</h3>
+              <p style={{ color: '#9aa9c5', fontSize: '0.88rem', lineHeight: 1.5 }}>
+                Parse existing experience and choose an engineering pivot destination from curated tracks or custom role descriptions.
               </p>
             </div>
 
-            <div className="card" style={{ position: 'relative' }}>
-              <div style={{ fontSize: '2.5rem', fontWeight: 800, color: 'rgba(211, 138, 25, 0.25)', fontFamily: 'var(--font-display)', marginBottom: '0.5rem' }}>
-                02
-              </div>
-              <h3 style={{ fontSize: '1.1rem', marginBottom: '0.4rem' }}>Discover Skill Gaps</h3>
-              <p style={{ color: 'var(--text-secondary)', fontSize: '0.88rem' }}>
-                Deterministic engine compares your existing proficiency against role requirements, ranking gaps by importance and prerequisites.
+            <div className="pivot-glass-card">
+              <span style={{ fontSize: '2rem', fontWeight: 800, color: '#70ead8', display: 'block', marginBottom: '0.4rem', fontFamily: 'var(--font-sans)' }}>02</span>
+              <h3 style={{ fontSize: '1.15rem', color: '#ffffff', marginBottom: '0.4rem', fontWeight: 700 }}>Opportunity Match (JD Analyzer)</h3>
+              <p style={{ color: '#9aa9c5', fontSize: '0.88rem', lineHeight: 1.5 }}>
+                Paste live job descriptions to uncover exact missing skills using a deterministic weighted gap formula (<code>gap × importance</code>).
               </p>
             </div>
 
-            <div className="card" style={{ position: 'relative' }}>
-              <div style={{ fontSize: '2.5rem', fontWeight: 800, color: 'rgba(211, 138, 25, 0.25)', fontFamily: 'var(--font-display)', marginBottom: '0.5rem' }}>
-                03
-              </div>
-              <h3 style={{ fontSize: '1.1rem', marginBottom: '0.4rem' }}>Follow Action Plan</h3>
-              <p style={{ color: 'var(--text-secondary)', fontSize: '0.88rem' }}>
-                Execute a staged roadmap with curated free resources, practice challenges, and practical portfolio milestones.
+            <div className="pivot-glass-card">
+              <span style={{ fontSize: '2rem', fontWeight: 800, color: '#ff806b', display: 'block', marginBottom: '0.4rem', fontFamily: 'var(--font-sans)' }}>03</span>
+              <h3 style={{ fontSize: '1.15rem', color: '#ffffff', marginBottom: '0.4rem', fontWeight: 700 }}>Weekly Learning Planner</h3>
+              <p style={{ color: '#9aa9c5', fontSize: '0.88rem', lineHeight: 1.5 }}>
+                Convert high-priority gaps into sequenced weekly milestones with time estimates and curated free resources.
               </p>
             </div>
 
-            <div className="card" style={{ position: 'relative' }}>
-              <div style={{ fontSize: '2.5rem', fontWeight: 800, color: 'rgba(211, 138, 25, 0.25)', fontFamily: 'var(--font-display)', marginBottom: '0.5rem' }}>
-                04
-              </div>
-              <h3 style={{ fontSize: '1.1rem', marginBottom: '0.4rem' }}>Track Readiness</h3>
-              <p style={{ color: 'var(--text-secondary)', fontSize: '0.88rem' }}>
-                Take verification quizzes, submit project evidence, and watch your explainable Career Readiness Score climb.
+            <div className="pivot-glass-card">
+              <span style={{ fontSize: '2rem', fontWeight: 800, color: '#c8b9ff', display: 'block', marginBottom: '0.4rem', fontFamily: 'var(--font-sans)' }}>04</span>
+              <h3 style={{ fontSize: '1.15rem', color: '#ffffff', marginBottom: '0.4rem', fontWeight: 700 }}>Project Forge (Portfolio Proof)</h3>
+              <p style={{ color: '#9aa9c5', fontSize: '0.88rem', lineHeight: 1.5 }}>
+                Build tailored, production-grade milestone projects designed specifically to prove mastery of uncovered skill gaps.
+              </p>
+            </div>
+
+            <div className="pivot-glass-card">
+              <span style={{ fontSize: '2rem', fontWeight: 800, color: '#d8ff68', display: 'block', marginBottom: '0.4rem', fontFamily: 'var(--font-sans)' }}>05</span>
+              <h3 style={{ fontSize: '1.15rem', color: '#ffffff', marginBottom: '0.4rem', fontWeight: 700 }}>Rubric-Scored Interview Arena</h3>
+              <p style={{ color: '#9aa9c5', fontSize: '0.88rem', lineHeight: 1.5 }}>
+                Practice real technical interview questions evaluated against objective rubrics with instant feedback and answer breakdowns.
+              </p>
+            </div>
+
+            <div className="pivot-glass-card">
+              <span style={{ fontSize: '2rem', fontWeight: 800, color: '#70ead8', display: 'block', marginBottom: '0.4rem', fontFamily: 'var(--font-sans)' }}>06</span>
+              <h3 style={{ fontSize: '1.15rem', color: '#ffffff', marginBottom: '0.4rem', fontWeight: 700 }}>Application Tracker & Feedback Loop</h3>
+              <p style={{ color: '#9aa9c5', fontSize: '0.88rem', lineHeight: 1.5 }}>
+                Record applications, track interview and offer conversion shares by role type, and dynamically adjust what roles you target.
               </p>
             </div>
           </div>
         </section>
 
-        {/* FEATURES SECTION */}
+        {/* DETAILED CAPABILITIES */}
         <section
           id="features"
           style={{
-            padding: '5rem 2rem',
-            background: 'var(--bg-card)',
-            borderTop: '1px solid var(--border-subtle)'
+            padding: '5rem 1.5rem',
+            background: 'rgba(10, 18, 43, 0.5)',
+            borderTop: '1px solid rgba(255, 255, 255, 0.08)'
           }}
         >
-          <div style={{ maxWidth: 1100, margin: '0 auto' }}>
+          <div style={{ maxWidth: 1160, margin: '0 auto' }}>
             <div style={{ textAlign: 'center', marginBottom: '3.5rem' }}>
-              <span style={{ fontSize: '0.85rem', fontWeight: 700, color: '#10b981', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
-                Product Capabilities
-              </span>
-              <h2 style={{ fontFamily: 'var(--font-serif)', fontSize: '2.2rem', fontWeight: 600, marginTop: '0.5rem' }}>Built for Complete Career Preparation</h2>
+              <div className="pivot-eyebrow" style={{ justifyContent: 'center', marginBottom: '0.6rem' }}>
+                <span className="pivot-live-dot" /> ENTERPRISE-GRADE INTELLIGENCE
+              </div>
+              <h2
+                style={{
+                  fontFamily: 'var(--font-serif)',
+                  fontSize: 'clamp(2rem, 4vw, 2.8rem)',
+                  fontWeight: 650,
+                  color: '#ffffff',
+                  letterSpacing: '-0.03em'
+                }}
+              >
+                Engineered for Explainability & Trust
+              </h2>
             </div>
 
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '2rem' }}>
               <div style={{ display: 'flex', gap: '1rem' }}>
-                <GitCompare size={24} color="var(--color-accent)" style={{ flexShrink: 0, marginTop: 4 }} />
+                <GitCompare size={24} color="var(--pivot-lime, #d8ff68)" style={{ flexShrink: 0, marginTop: 4 }} />
                 <div>
-                  <h4 style={{ fontSize: '1.1rem', marginBottom: '0.3rem' }}>Deterministic Skill Gap Analysis</h4>
-                  <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem' }}>
-                    Transparent scoring formula that separates self-reported skills from verified assessments and calculates exact learning hours.
+                  <h4 style={{ fontSize: '1.1rem', color: '#ffffff', marginBottom: '0.3rem', fontWeight: 700 }}>Deterministic Gap Algorithm</h4>
+                  <p style={{ color: '#9aa9c5', fontSize: '0.88rem', lineHeight: 1.5 }}>
+                    Transparent calculation separating self-reported skills from verified proofs, ranking gaps without hallucination.
                   </p>
                 </div>
               </div>
 
               <div style={{ display: 'flex', gap: '1rem' }}>
-                <Milestone size={24} color="var(--color-accent)" style={{ flexShrink: 0, marginTop: 4 }} />
+                <Milestone size={24} color="var(--pivot-mint, #70ead8)" style={{ flexShrink: 0, marginTop: 4 }} />
                 <div>
-                  <h4 style={{ fontSize: '1.1rem', marginBottom: '0.3rem' }}>Topological Roadmap Ordering</h4>
-                  <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem' }}>
-                    Respects prerequisite hierarchies so foundational requirements are mastered before tackling advanced distributed systems.
+                  <h4 style={{ fontSize: '1.1rem', color: '#ffffff', marginBottom: '0.3rem', fontWeight: 700 }}>Vacancy Flight Simulator</h4>
+                  <p style={{ color: '#9aa9c5', fontSize: '0.88rem', lineHeight: 1.5 }}>
+                    Interactive what-if simulations testing candidate competitiveness against industry vacancies before submitting applications.
                   </p>
                 </div>
               </div>
 
               <div style={{ display: 'flex', gap: '1rem' }}>
-                <Brain size={24} color="#ec4899" style={{ flexShrink: 0, marginTop: 4 }} />
+                <Brain size={24} color="#ff806b" style={{ flexShrink: 0, marginTop: 4 }} />
                 <div>
-                  <h4 style={{ fontSize: '1.1rem', marginBottom: '0.3rem' }}>Personalized AI Career Coach</h4>
-                  <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem' }}>
-                    Powered by Google Gemini with instant deterministic fallback, providing tactical study schedules and interview preparation.
+                  <h4 style={{ fontSize: '1.1rem', color: '#ffffff', marginBottom: '0.3rem', fontWeight: 700 }}>AI Career Coach + Offline Fallback</h4>
+                  <p style={{ color: '#9aa9c5', fontSize: '0.88rem', lineHeight: 1.5 }}>
+                    Google Gemini 3.8 Flash paired with an offline Deterministic Advisory Engine guarantees 100% platform availability.
                   </p>
                 </div>
               </div>
 
               <div style={{ display: 'flex', gap: '1rem' }}>
-                <FolderGit2 size={24} color="#38bdf8" style={{ flexShrink: 0, marginTop: 4 }} />
+                <ShieldCheck size={24} color="#c8b9ff" style={{ flexShrink: 0, marginTop: 4 }} />
                 <div>
-                  <h4 style={{ fontSize: '1.1rem', marginBottom: '0.3rem' }}>Project Recommendation Engine</h4>
-                  <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem' }}>
-                    Suggests practical, multi-milestone projects with evaluation criteria specifically tailored to fill your missing skills.
-                  </p>
-                </div>
-              </div>
-
-              <div style={{ display: 'flex', gap: '1rem' }}>
-                <Award size={24} color="#10b981" style={{ flexShrink: 0, marginTop: 4 }} />
-                <div>
-                  <h4 style={{ fontSize: '1.1rem', marginBottom: '0.3rem' }}>Skill Verification Assessments</h4>
-                  <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem' }}>
-                    Server-graded interactive quizzes that test conceptual rigor and upgrade skills to officially verified status.
-                  </p>
-                </div>
-              </div>
-
-              <div style={{ display: 'flex', gap: '1rem' }}>
-                <ShieldCheck size={24} color="#f59e0b" style={{ flexShrink: 0, marginTop: 4 }} />
-                <div>
-                  <h4 style={{ fontSize: '1.1rem', marginBottom: '0.3rem' }}>Explainable Career Readiness</h4>
-                  <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem' }}>
-                    Documented, weighted scoring model (50% skills, 25% quizzes, 25% projects) with actionable advice on gaining +10% readiness.
+                  <h4 style={{ fontSize: '1.1rem', color: '#ffffff', marginBottom: '0.3rem', fontWeight: 700 }}>Skill Proof Lab & Evidence Ledger</h4>
+                  <p style={{ color: '#9aa9c5', fontSize: '0.88rem', lineHeight: 1.5 }}>
+                    Server-graded coding challenges verify real competence, recording immutable proof points in a canonical ledger.
                   </p>
                 </div>
               </div>
@@ -426,20 +460,29 @@ export const LandingPage: React.FC = () => {
         </section>
 
         {/* FINAL CTA */}
-        <section style={{ padding: '6rem 2rem', textAlign: 'center', maxWidth: 800, margin: '0 auto' }}>
-          <h2 style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(2rem, 4vw, 2.8rem)', fontWeight: 600, marginBottom: '1rem' }}>
-            Your Next Career Move Starts Here.
+        <section style={{ padding: '6rem 1.5rem', textAlign: 'center', maxWidth: 840, margin: '0 auto' }}>
+          <h2
+            style={{
+              fontFamily: 'var(--font-serif)',
+              fontSize: 'clamp(2.2rem, 4.5vw, 3.2rem)',
+              fontWeight: 650,
+              color: '#ffffff',
+              marginBottom: '1rem',
+              letterSpacing: '-0.04em'
+            }}
+          >
+            Your next chapter has a route.
           </h2>
-          <p style={{ color: 'var(--text-secondary)', fontSize: '1.1rem', marginBottom: '2.5rem' }}>
-            Answer the two most important questions in your career: What am I missing? And what should I do next?
+          <p style={{ color: '#9aa9c5', fontSize: '1.1rem', marginBottom: '2.5rem', lineHeight: 1.6 }}>
+            Stop guessing what employers want. Let PivotCraft AI turn your career transition into measurable, verifiable proof.
           </p>
           <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
-            <Link to={user ? "/dashboard" : "/auth?mode=register"} className="btn btn-primary btn-lg">
-              <span>Create My Roadmap</span>
-              <ArrowRight size={18} />
+            <Link to={user ? "/dashboard" : "/demo"} className="pivot-cta-primary">
+              <span>Enter Pivot Studio</span>
+              <ArrowRight size={17} />
             </Link>
-            <button onClick={handleDemo} className="btn btn-secondary btn-lg">
-              <Sparkles size={18} color="var(--color-accent)" />
+            <button onClick={handleDemo} className="pivot-cta-secondary">
+              <Sparkles size={16} color="var(--pivot-lime, #d8ff68)" />
               <span>Explore Demo Profile</span>
             </button>
           </div>
@@ -450,23 +493,38 @@ export const LandingPage: React.FC = () => {
       <footer
         className="no-print"
         style={{
-          padding: '2.5rem 2rem',
-          borderTop: '1px solid var(--border-subtle)',
-          background: 'var(--bg-card)',
-          textAlign: 'center',
-          color: 'var(--text-muted)',
-          fontSize: '0.85rem'
+          padding: '2rem 1.5rem',
+          borderTop: '1px solid rgba(255, 255, 255, 0.08)',
+          background: 'rgba(8, 15, 36, 0.85)',
+          color: '#8c9cb8',
+          fontSize: '0.82rem'
         }}
       >
-        <div style={{ maxWidth: 1100, margin: '0 auto', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1rem' }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: 'var(--text-primary)', fontWeight: 700 }}>
-            <Layers size={18} color="var(--color-accent)" />
-            PivotCraft AI
+        <div
+          style={{
+            maxWidth: 1200,
+            margin: '0 auto',
+            display: 'flex',
+            justifyContent: 'space-between',
+            alignItems: 'center',
+            flexWrap: 'wrap',
+            gap: '1rem'
+          }}
+        >
+          <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', color: '#ffffff', fontWeight: 750 }}>
+            <span className="pivot-mark" style={{ width: 24, height: 24, padding: 5 }}>
+              <span /><span /><span />
+            </span>
+            <span>pivotcraft<span className="pivot-wordmark-dot">.</span></span>
           </div>
-          <div>Product Space AI Hackathon &bull; Career Pivot Coach</div>
-          <div style={{ display: 'flex', gap: '1rem' }}>
-            <Link to="/auth" style={{ color: 'var(--text-secondary)' }}>Sign In</Link>
-            <button onClick={handleDemo} style={{ color: 'var(--color-accent)', fontWeight: 600 }}>Demo Mode</button>
+          <div>PRODUCT SPACE AI HACKATHON &bull; PROBLEM 5: CAREER PIVOT COACH (TEAM CRADUO)</div>
+          <div style={{ display: 'flex', gap: '1.2rem' }}>
+            <Link to="/demo" style={{ color: 'var(--pivot-lime, #d8ff68)', textDecoration: 'none', fontWeight: 650 }}>
+              Launch Demo
+            </Link>
+            <Link to="/auth" style={{ color: '#9aa9c5', textDecoration: 'none' }}>
+              Sign In
+            </Link>
           </div>
         </div>
       </footer>
