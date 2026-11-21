@@ -1109,7 +1109,7 @@ export const ProfilePage: React.FC = () => {
                         id="expOrg"
                         type="text"
                         className="form-input"
-                        placeholder="e.g. SaarthiX Research Labs"
+                        placeholder="e.g. AI Research Labs"
                         value={expOrg}
                         onChange={e => setExpOrg(e.target.value)}
                       />

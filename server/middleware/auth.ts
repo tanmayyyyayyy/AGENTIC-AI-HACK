@@ -2,7 +2,7 @@ import { Request, Response, NextFunction } from 'express';
 import jwt from 'jsonwebtoken';
 import { db, DEMO_USER_ID } from '../db/store.js';
 
-const DEFAULT_JWT_SECRET = 'skillforge-dev-secret-key-saarthix-mvp-2026';
+const DEFAULT_JWT_SECRET = 'skillforge-dev-secret-key-2026';
 
 let warnedDevSecret = false;
 

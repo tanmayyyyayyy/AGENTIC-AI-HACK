@@ -393,7 +393,7 @@ describe('Career Intelligence OS — Eight Integrated Features', () => {
     it('analyzes public repository metadata safely without private tokens', async () => {
       const res = await api('/api/portfolio-intelligence/analyze-repo', {
         method: 'POST',
-        body: { repoUrl: 'https://github.com/tanmayyyyayyy/SkillForge-AI' }
+        body: { repoUrl: 'https://github.com/tanmayyyyayyy/AGENTIC-AI-HACK' }
       });
       expect(res.status).toBe(200);
       const analysis = res.body.analysis;

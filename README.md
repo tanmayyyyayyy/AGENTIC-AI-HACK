@@ -257,9 +257,8 @@ npm run lint
 
 ## Production Deployment & Operational Notes
 
-The live MVP is deployed on Render:
+The application can be deployed directly with Render using the included `render.yaml`:
 
-- **Web URL:** [https://skillforge-ai-q4tz.onrender.com](https://skillforge-ai-q4tz.onrender.com)
 - **Health Check Endpoint:** `GET /api/health`
 - **Build Command:** `npm ci --include=dev && npm run build`
 - **Start Command:** `npm start`

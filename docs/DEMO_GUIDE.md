@@ -1,6 +1,5 @@
 # SkillForge AI — 3-Minute Hackathon Demo Script & Evaluator Guide
 
-> **Live Application URL:** [https://skillforge-ai-q4tz.onrender.com](https://skillforge-ai-q4tz.onrender.com)  
 > **Local Dev URL:** `http://localhost:3000` (API at `http://localhost:5001`)  
 > **Pre-seeded Evaluator Account:** `demo.evaluator@skillforge.ai` (Aarav Sharma, Year 3 B.Tech targeting AI/ML Engineer)
 
@@ -20,7 +19,7 @@ This walkthrough demonstrates the end-to-end value proposition of SkillForge AI 
 ## Step-by-Step Demonstration Script
 
 ### Step 1: Instant Demo Login & Mission Control (0:00 – 0:45)
-1. Navigate to the application homepage (`/` or `https://skillforge-ai-q4tz.onrender.com`).
+1. Navigate to the application homepage (`/` or `http://localhost:3000`).
 2. Click **"Explore Demo"** (or **"Demo Login"**).
    - *What happens:* Automatically logs in as **Aarav Sharma**, pre-seeded with real engineering coursework, verified skills, and project milestones.
 3. Observe **Mission Control** (`/mission-control`):

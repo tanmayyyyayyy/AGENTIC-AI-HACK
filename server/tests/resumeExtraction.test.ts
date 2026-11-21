@@ -22,7 +22,7 @@ Built a face recognition attendance tool with Python and OpenCV.
 https://github.com/aarav/attendance
 
 Experience
-Machine Learning Intern at SaarthiX Labs
+Machine Learning Intern at AI Research Labs
 May 2024 - Jul 2024
 Built recommendation models in Python.
 
@@ -119,7 +119,7 @@ describe('Subphase 2B: Resume Upload & Skill Extraction', () => {
       expect(extraction.experience.length).toBeGreaterThanOrEqual(1);
       const exp = extraction.experience[0];
       expect(exp.role).toContain('Intern');
-      expect(exp.organization).toContain('SaarthiX Labs');
+      expect(exp.organization).toContain('AI Research Labs');
       expect(exp.skillsDemonstrated.length).toBeGreaterThan(0);
     });
 

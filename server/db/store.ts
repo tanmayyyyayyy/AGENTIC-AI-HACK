@@ -184,7 +184,7 @@ export function getDemoSeedData(): DatabaseSchema {
     experience: [
       {
         id: 'exp_demo_1',
-        organization: 'SaarthiX Labs',
+        organization: 'AI Research Labs',
         role: 'Machine Learning Research Intern',
         duration: 'May 2024 - July 2024 (3 mos)',
         responsibilities: 'Implemented data preprocessing pipelines and evaluated baseline Scikit-Learn classifiers for tabular anomaly detection.',

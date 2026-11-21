@@ -1,7 +1,7 @@
 # SkillForge AI — Known Limitations & Operational Considerations
 
 > **Version:** 2.0 MVP  
-> **Platform Target:** SaarthiX Jobs Hackathon 2026
+> **Platform Target:** Product Space AI Hackathon
 
 This document provides a factual, transparent record of current architectural boundaries, hardware dependencies, and operational trade-offs in SkillForge AI 2.0.
 

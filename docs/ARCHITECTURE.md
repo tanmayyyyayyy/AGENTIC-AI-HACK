@@ -1,9 +1,9 @@
 # SkillForge AI — System Architecture & Technical Specifications
 
 > **Version:** 2.0 MVP  
-> **Platform Target:** SaarthiX Jobs Hackathon 2026  
-> **Repository:** [tanmayyyyayyy/SkillForge-AI](https://github.com/tanmayyyyayyy/SkillForge-AI)  
-> **Live Deployment:** [https://skillforge-ai-q4tz.onrender.com](https://skillforge-ai-q4tz.onrender.com)
+> **Platform Target:** Product Space AI Hackathon (Problem 5: Career Pivot Coach)  
+> **Team:** CRADUO  
+> **Repository:** [tanmayyyyayyy/AGENTIC-AI-HACK](https://github.com/tanmayyyyayyy/AGENTIC-AI-HACK)
 
 ---
 
