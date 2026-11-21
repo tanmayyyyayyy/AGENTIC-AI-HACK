@@ -82,8 +82,8 @@ export const RoadmapPage: React.FC = () => {
             style={{
               width: 44,
               height: 44,
-              border: '3px solid rgba(211, 138, 25, 0.2)',
-              borderTopColor: '#D38A19',
+              border: '3px solid rgba(216, 255, 104, 0.2)',
+              borderTopColor: 'var(--pivot-lime, #d8ff68)',
               borderRadius: '50%',
               margin: '0 auto 1.25rem',
               animation: 'spin 0.8s linear infinite'
@@ -439,7 +439,7 @@ export const RoadmapPage: React.FC = () => {
                             value={noteContent}
                             onChange={e => setNoteContent(e.target.value)}
                             placeholder="Add your study notes, insights, or repository links for this skill..."
-                            style={{ minHeight: 75, background: '#FAF5EC', border: '1px solid var(--border-medium)' }}
+                            style={{ minHeight: 75, background: 'var(--bg-surface)', border: '1px solid var(--border-medium)' }}
                           />
                           <div style={{ display: 'flex', justifyContent: 'flex-end', gap: '0.6rem', marginTop: '0.5rem' }}>
                             <button

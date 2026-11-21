@@ -95,14 +95,14 @@ export const AiCoachPage: React.FC = () => {
               width: 38,
               height: 38,
               borderRadius: 'var(--radius-md)',
-              background: 'linear-gradient(135deg, #D38A19 0%, #F5A623 100%)',
+              background: 'linear-gradient(135deg, #d8ff68 0%, #70ead8 100%)',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
-              boxShadow: '0 2px 10px rgba(211, 138, 25, 0.3)'
+              boxShadow: '0 2px 14px rgba(216, 255, 104, 0.3)'
             }}
           >
-            <Bot size={22} color="#ffffff" />
+            <Bot size={22} color="#101a39" />
           </div>
           <div>
             <h1 style={{ fontFamily: 'var(--font-serif)', fontSize: '1.45rem', fontWeight: 600, color: 'var(--text-primary)', margin: 0 }}>

@@ -125,33 +125,14 @@ export const Sidebar: React.FC = () => {
         }}
       >
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
-          <div
-            style={{
-              width: 34,
-              height: 34,
-              borderRadius: 8,
-              background: 'var(--color-paper-light)',
-              border: '1px solid var(--border-subtle)',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              boxShadow: '0 1px 4px rgba(48, 35, 25, 0.08)'
-            }}
-          >
-            <svg width="22" height="22" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path
-                d="M11 11H15C15 9.34 16.34 8 18 8C19.66 8 21 9.34 21 11H23C24.1 11 25 11.9 25 13V15C26.66 15 28 16.34 28 18C28 19.66 26.66 21 25 21V23C25 24.1 24.1 25 23 25H21C21 23.34 19.66 22 18 22C16.34 22 15 23.34 15 25H11C9.9 25 9 24.1 9 23V19C10.66 19 12 17.66 12 16C12 14.34 10.66 13 9 13V13C9 11.9 9.9 11 11 11Z"
-                fill="#D38A19"
-                stroke="#B3700E"
-                strokeWidth="0.8"
-              />
-            </svg>
-          </div>
+          <span className="pivot-mark">
+            <span /><span /><span />
+          </span>
           <div>
-            <span style={{ fontFamily: 'var(--font-serif)', fontWeight: 700, fontSize: '1.25rem', color: 'var(--text-primary)' }}>
-              PivotCraft AI
+            <span style={{ fontWeight: 800, fontSize: '1.15rem', color: '#ffffff', letterSpacing: '-0.03em' }}>
+              pivotcraft<span className="pivot-wordmark-dot">.</span>
             </span>
-            <div style={{ fontSize: '0.72rem', color: 'var(--text-muted)' }}>Career Intelligence</div>
+            <div style={{ fontSize: '0.65rem', color: '#8696b4', letterSpacing: '0.04em', fontWeight: 700 }}>CAREER STUDIO</div>
           </div>
         </div>
 
@@ -215,9 +196,9 @@ export const Sidebar: React.FC = () => {
                     gap: '0.75rem',
                     padding: '0.55rem 0.85rem',
                     borderRadius: 'var(--radius-md)',
-                    color: isActive ? 'var(--text-primary)' : 'var(--text-secondary)',
-                    background: isActive ? 'rgba(211, 138, 25, 0.14)' : 'transparent',
-                    borderLeft: isActive ? '3px solid var(--color-accent)' : '3px solid transparent',
+                    color: isActive ? 'var(--pivot-lime, #d8ff68)' : 'var(--text-secondary)',
+                    background: isActive ? 'rgba(216, 255, 104, 0.12)' : 'transparent',
+                    borderLeft: isActive ? '3px solid var(--pivot-lime, #d8ff68)' : '3px solid transparent',
                     fontSize: '0.86rem',
                     fontWeight: isActive ? 700 : 500,
                     transition: 'all var(--transition-fast)'
@@ -242,7 +223,7 @@ export const Sidebar: React.FC = () => {
         style={{
           padding: '1rem 1.25rem',
           borderTop: '1px solid var(--border-subtle)',
-          background: 'rgba(48, 35, 25, 0.03)',
+          background: 'rgba(8, 15, 36, 0.7)',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'space-between'
@@ -254,11 +235,11 @@ export const Sidebar: React.FC = () => {
               width: 34,
               height: 34,
               borderRadius: '50%',
-              background: 'linear-gradient(135deg, #D38A19 0%, #F5A623 100%)',
+              background: 'linear-gradient(135deg, #d8ff68 0%, #70ead8 100%)',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
-              color: '#ffffff',
+              color: '#101a39',
               fontWeight: 700,
               fontSize: '0.85rem',
               flexShrink: 0

@@ -21,34 +21,34 @@ export const PuzzleSkillVisualization: React.FC<PuzzleSkillVisualizationProps> =
           <svg width="220" height="130" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg">
             <defs>
               <linearGradient id="puzzleGold" x1="120" y1="20" x2="190" y2="90" gradientUnits="userSpaceOnUse">
-                <stop stopColor="#F5A623" />
-                <stop offset="1" stopColor="#D38A19" />
+                <stop stopColor="#d8ff68" />
+                <stop offset="1" stopColor="#70ead8" />
               </linearGradient>
               <filter id="pieceShadow" x="110" y="20" width="80" height="80" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
-                <feDropShadow dx="0" dy="4" stdDeviation="5" floodColor="#302319" floodOpacity="0.15" />
+                <feDropShadow dx="0" dy="4" stdDeviation="5" floodColor="#040917" floodOpacity="0.4" />
               </filter>
             </defs>
 
             {/* Radiant decorative rays above the golden piece */}
             <g opacity="0.85">
-              <line x1="148" y1="12" x2="148" y2="4" stroke="#D38A19" strokeWidth="1.5" strokeLinecap="round" />
-              <line x1="135" y1="16" x2="130" y2="9" stroke="#D38A19" strokeWidth="1.5" strokeLinecap="round" />
-              <line x1="161" y1="16" x2="166" y2="9" stroke="#D38A19" strokeWidth="1.5" strokeLinecap="round" />
-              <line x1="124" y1="23" x2="117" y2="20" stroke="#D38A19" strokeWidth="1.5" strokeLinecap="round" />
-              <line x1="172" y1="23" x2="179" y2="20" stroke="#D38A19" strokeWidth="1.5" strokeLinecap="round" />
+              <line x1="148" y1="12" x2="148" y2="4" stroke="#d8ff68" strokeWidth="1.5" strokeLinecap="round" />
+              <line x1="135" y1="16" x2="130" y2="9" stroke="#d8ff68" strokeWidth="1.5" strokeLinecap="round" />
+              <line x1="161" y1="16" x2="166" y2="9" stroke="#d8ff68" strokeWidth="1.5" strokeLinecap="round" />
+              <line x1="124" y1="23" x2="117" y2="20" stroke="#d8ff68" strokeWidth="1.5" strokeLinecap="round" />
+              <line x1="172" y1="23" x2="179" y2="20" stroke="#d8ff68" strokeWidth="1.5" strokeLinecap="round" />
             </g>
 
             {/* Dynamic dotted connecting arc from empty slot to golden piece */}
             <path
               d="M75 55 C90 28, 120 28, 132 45"
-              stroke="#D38A19"
+              stroke="#d8ff68"
               strokeWidth="1.5"
               strokeDasharray="3 3"
               fill="none"
               opacity="0.7"
             />
             {/* Arrowhead */}
-            <polygon points="135,46 130,41 127,47" fill="#D38A19" opacity="0.8" />
+            <polygon points="135,46 130,41 127,47" fill="#d8ff68" opacity="0.8" />
 
             {/* Left: Outlined Empty Puzzle Shape (The slot waiting to be filled) */}
             <g transform="translate(25, 30)">
@@ -59,14 +59,14 @@ export const PuzzleSkillVisualization: React.FC<PuzzleSkillVisualizationProps> =
                 height="50"
                 rx="6"
                 fill="none"
-                stroke="#C0AF9A"
+                stroke="rgba(255, 255, 255, 0.2)"
                 strokeWidth="1.5"
                 strokeDasharray="4 3"
               />
               {/* Inner subtle indented circle indicating socket */}
-              <circle cx="25" cy="0" r="7" fill="#D5C9B9" stroke="#C0AF9A" strokeWidth="1.2" strokeDasharray="3 2" />
-              <circle cx="50" cy="25" r="7" fill="#D5C9B9" stroke="#C0AF9A" strokeWidth="1.2" strokeDasharray="3 2" />
-              <text x="25" y="30" textAnchor="middle" fill="#8F7E6D" fontSize="11" fontFamily="var(--font-sans)" fontWeight="500">
+              <circle cx="25" cy="0" r="7" fill="#0c1531" stroke="rgba(255, 255, 255, 0.2)" strokeWidth="1.2" strokeDasharray="3 2" />
+              <circle cx="50" cy="25" r="7" fill="#0c1531" stroke="rgba(255, 255, 255, 0.2)" strokeWidth="1.2" strokeDasharray="3 2" />
+              <text x="25" y="30" textAnchor="middle" fill="#8696b4" fontSize="11" fontFamily="var(--font-sans)" fontWeight="500">
                 Slot
               </text>
             </g>

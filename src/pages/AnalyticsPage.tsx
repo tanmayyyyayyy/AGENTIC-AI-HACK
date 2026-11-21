@@ -190,7 +190,7 @@ export const AnalyticsPage: React.FC = () => {
                   <>
                     <polyline
                       fill="none"
-                      stroke="#D38A19"
+                      stroke="var(--pivot-lime, #d8ff68)"
                       strokeWidth="3.5"
                       strokeLinecap="round"
                       strokeLinejoin="round"
@@ -201,8 +201,8 @@ export const AnalyticsPage: React.FC = () => {
                       const y = 140 - (p / 100) * 120;
                       return (
                         <g key={idx}>
-                          <circle cx={x} cy={y} r="5" fill="#D38A19" stroke="#F3EBDD" strokeWidth="2" />
-                          <text x={x - 8} y={y - 10} fill="#302319" fontSize="11" fontWeight="bold">
+                          <circle cx={x} cy={y} r="5" fill="#d8ff68" stroke="#172447" strokeWidth="2" />
+                          <text x={x - 8} y={y - 10} fill="#f7f7f2" fontSize="11" fontWeight="bold">
                             {p}%
                           </text>
                         </g>

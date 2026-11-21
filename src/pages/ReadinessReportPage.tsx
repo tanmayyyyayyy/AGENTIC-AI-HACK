@@ -148,8 +148,8 @@ export const ReadinessReportPage: React.FC = () => {
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', borderBottom: '2px solid var(--border-medium)', paddingBottom: '1.5rem', flexWrap: 'wrap', gap: '1rem' }}>
           <div>
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.65rem' }}>
-              <div style={{ width: 32, height: 32, borderRadius: 6, background: '#D38A19', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                <Layers size={18} color="#ffffff" />
+              <div style={{ width: 32, height: 32, borderRadius: 6, background: 'var(--pivot-lime, #d8ff68)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                <Layers size={18} color="#101a39" />
               </div>
               <span style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '1.35rem' }}>
                 PivotCraft AI

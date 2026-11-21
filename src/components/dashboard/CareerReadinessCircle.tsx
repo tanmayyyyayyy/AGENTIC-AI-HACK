@@ -33,12 +33,12 @@ export const CareerReadinessCircle: React.FC<CareerReadinessCircleProps> = ({ re
         </p>
 
         {/* Small subtle breakdown progress line */}
-        <div style={{ width: '80px', height: '3px', background: '#D9CCBA', borderRadius: '9999px', marginTop: '0.85rem', overflow: 'hidden' }}>
+        <div style={{ width: '80px', height: '3px', background: 'rgba(255, 255, 255, 0.14)', borderRadius: '9999px', marginTop: '0.85rem', overflow: 'hidden' }}>
           <div
             style={{
               width: `${currentScore ?? 0}%`,
               height: '100%',
-              background: '#D38A19',
+              background: 'var(--pivot-lime, #d8ff68)',
               borderRadius: '9999px'
             }}
           />

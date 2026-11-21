@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate, useSearchParams, Link } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext.js';
 import { useToast } from '../context/ToastContext.js';
-import { Layers, Sparkles, LogIn, UserPlus, ShieldCheck } from 'lucide-react';
+import { Sparkles, LogIn, UserPlus, ShieldCheck } from 'lucide-react';
 
 export const AuthPage: React.FC = () => {
   const [searchParams] = useSearchParams();
@@ -70,63 +70,60 @@ export const AuthPage: React.FC = () => {
 
   return (
     <div
+      className="pivot-landing-root"
       style={{
         minHeight: '100vh',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        background: 'var(--bg-main)',
         padding: '2rem 1.5rem',
         position: 'relative'
       }}
     >
+      <div className="pivot-atmosphere" aria-hidden="true" />
+
       <div
         style={{
           maxWidth: 440,
           width: '100%',
-          background: 'var(--bg-card)',
-          border: '1px solid var(--border-medium)',
-          borderRadius: 'var(--radius-lg)',
+          background: 'rgba(23, 36, 71, 0.82)',
+          backdropFilter: 'blur(16px)',
+          border: '1px solid rgba(255, 255, 255, 0.12)',
+          borderRadius: 20,
           padding: '2.5rem 2rem',
-          boxShadow: 'var(--shadow-lg)'
+          boxShadow: '0 24px 60px rgba(4, 9, 23, 0.75)',
+          position: 'relative',
+          zIndex: 1
         }}
       >
         {/* Brand */}
         <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
           <Link
             to="/"
+            className="pivot-wordmark"
+            style={{ fontSize: '1.35rem', justifyContent: 'center' }}
+            aria-label="PivotCraft home"
+          >
+            <span className="pivot-mark">
+              <span /><span /><span />
+            </span>
+            <span>pivotcraft<span className="pivot-wordmark-dot">.</span></span>
+          </Link>
+          <h2
             style={{
-              display: 'inline-flex',
-              alignItems: 'center',
-              gap: '0.65rem',
-              color: 'var(--text-primary)',
-              fontFamily: 'var(--font-display)',
-              fontWeight: 800,
-              fontSize: '1.4rem'
+              fontFamily: 'var(--font-serif)',
+              fontSize: '1.85rem',
+              fontWeight: 650,
+              color: '#ffffff',
+              marginTop: '1.25rem',
+              letterSpacing: '-0.03em'
             }}
           >
-            <div
-              style={{
-                width: 36,
-                height: 36,
-                borderRadius: 8,
-                background: 'linear-gradient(135deg, #D38A19 0%, #B27010 100%)',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                boxShadow: '0 2px 10px rgba(211, 138, 25, 0.35)'
-              }}
-            >
-              <Layers size={20} color="#ffffff" />
-            </div>
-            <span>PivotCraft <span style={{ color: 'var(--color-accent)' }}>AI</span></span>
-          </Link>
-          <h2 style={{ fontFamily: 'var(--font-serif)', fontSize: '1.8rem', fontWeight: 600, color: 'var(--text-primary)', marginTop: '1.25rem' }}>
             {isRegister ? 'Create Your Account' : 'Welcome Back'}
           </h2>
-          <p style={{ color: 'var(--text-secondary)', fontSize: '0.88rem', marginTop: '0.35rem' }}>
+          <p style={{ color: '#9aa9c5', fontSize: '0.88rem', marginTop: '0.35rem' }}>
             {isRegister
-              ? 'Start building your personalized career roadmap today.'
+              ? 'Start mapping your personalized career pivot today.'
               : 'Sign in to access your saved skills, roadmap, and progress.'}
           </p>
         </div>
@@ -134,16 +131,27 @@ export const AuthPage: React.FC = () => {
         {/* 1-Click Evaluator Demo Access Box */}
         <div
           style={{
-            background: 'rgba(211, 138, 25, 0.08)',
-            border: '1px solid rgba(211, 138, 25, 0.25)',
-            borderRadius: 'var(--radius-md)',
-            padding: '1rem',
+            background: 'rgba(216, 255, 104, 0.08)',
+            border: '1px solid rgba(216, 255, 104, 0.28)',
+            borderRadius: 14,
+            padding: '1.1rem',
             marginBottom: '1.75rem',
             textAlign: 'center'
           }}
         >
-          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.4rem', color: 'var(--color-accent)', fontSize: '0.82rem', fontWeight: 600, marginBottom: '0.5rem' }}>
-            <Sparkles size={14} color="var(--color-accent)" />
+          <div
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              gap: '0.4rem',
+              color: 'var(--pivot-lime, #d8ff68)',
+              fontSize: '0.82rem',
+              fontWeight: 700,
+              marginBottom: '0.6rem'
+            }}
+          >
+            <Sparkles size={14} color="var(--pivot-lime, #d8ff68)" />
             <span>Hackathon Evaluator Quick Access</span>
           </div>
           <button
@@ -153,27 +161,28 @@ export const AuthPage: React.FC = () => {
             className="btn btn-secondary"
             style={{
               width: '100%',
-              background: 'rgba(211, 138, 25, 0.15)',
-              color: 'var(--color-accent)',
-              borderColor: 'rgba(211, 138, 25, 0.35)',
+              background: 'rgba(216, 255, 104, 0.16)',
+              color: 'var(--pivot-lime, #d8ff68)',
+              borderColor: 'rgba(216, 255, 104, 0.45)',
               fontSize: '0.88rem',
-              fontWeight: 600
+              fontWeight: 750,
+              padding: '0.65rem'
             }}
           >
-            <ShieldCheck size={16} color="var(--color-accent)" />
+            <ShieldCheck size={16} color="var(--pivot-lime, #d8ff68)" />
             <span>Explore Demo Profile (Aarav Sharma)</span>
           </button>
-          <div style={{ fontSize: '0.74rem', color: 'var(--text-muted)', marginTop: '0.45rem' }}>
+          <div style={{ fontSize: '0.74rem', color: '#90a0be', marginTop: '0.45rem' }}>
             Instant access with pre-loaded AI/ML profile, completed tasks, and assessments.
           </div>
         </div>
 
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1.5rem' }}>
-          <div style={{ flex: 1, height: 1, background: 'var(--border-subtle)' }} />
-          <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)', textTransform: 'uppercase' }}>
+          <div style={{ flex: 1, height: 1, background: 'rgba(255, 255, 255, 0.1)' }} />
+          <span style={{ fontSize: '0.72rem', color: '#7a8ba8', textTransform: 'uppercase', letterSpacing: '0.08em', fontWeight: 650 }}>
             Or continue with email
           </span>
-          <div style={{ flex: 1, height: 1, background: 'var(--border-subtle)' }} />
+          <div style={{ flex: 1, height: 1, background: 'rgba(255, 255, 255, 0.1)' }} />
         </div>
 
         {/* Error Alert */}
@@ -182,10 +191,10 @@ export const AuthPage: React.FC = () => {
             role="alert"
             style={{
               padding: '0.75rem 1rem',
-              background: 'var(--danger-subtle)',
-              border: '1px solid rgba(239, 68, 68, 0.3)',
-              borderRadius: 'var(--radius-md)',
-              color: 'var(--danger)',
+              background: 'rgba(255, 95, 86, 0.15)',
+              border: '1px solid rgba(255, 95, 86, 0.35)',
+              borderRadius: 10,
+              color: '#ff806b',
               fontSize: '0.85rem',
               marginBottom: '1.25rem'
             }}
@@ -198,7 +207,7 @@ export const AuthPage: React.FC = () => {
         <form onSubmit={handleSubmit}>
           {isRegister && (
             <div className="form-group">
-              <label className="form-label" htmlFor="name">Full Name</label>
+              <label className="form-label" htmlFor="name" style={{ color: '#dce3f1' }}>Full Name</label>
               <input
                 id="name"
                 type="text"
@@ -213,7 +222,7 @@ export const AuthPage: React.FC = () => {
           )}
 
           <div className="form-group">
-            <label className="form-label" htmlFor="email">Email Address</label>
+            <label className="form-label" htmlFor="email" style={{ color: '#dce3f1' }}>Email Address</label>
             <input
               id="email"
               type="email"
@@ -227,7 +236,7 @@ export const AuthPage: React.FC = () => {
           </div>
 
           <div className="form-group">
-            <label className="form-label" htmlFor="password">Password</label>
+            <label className="form-label" htmlFor="password" style={{ color: '#dce3f1' }}>Password</label>
             <input
               id="password"
               type="password"
@@ -245,7 +254,7 @@ export const AuthPage: React.FC = () => {
             type="submit"
             disabled={isLoading}
             className="btn btn-primary"
-            style={{ width: '100%', marginTop: '0.5rem', padding: '0.75rem' }}
+            style={{ width: '100%', marginTop: '0.5rem', padding: '0.75rem', fontSize: '0.95rem' }}
           >
             {isLoading ? (
               <span>Authenticating...</span>
@@ -264,14 +273,14 @@ export const AuthPage: React.FC = () => {
         </form>
 
         {/* Switch mode */}
-        <div style={{ marginTop: '1.75rem', textAlign: 'center', fontSize: '0.88rem', color: 'var(--text-secondary)' }}>
+        <div style={{ marginTop: '1.75rem', textAlign: 'center', fontSize: '0.88rem', color: '#9aa9c5' }}>
           {isRegister ? (
             <>
               Already have an account?{' '}
               <button
                 type="button"
                 onClick={() => { setIsRegister(false); setErrorMessage(''); }}
-                style={{ color: 'var(--color-accent)', fontWeight: 600, background: 'none', border: 'none', cursor: 'pointer', textDecoration: 'underline' }}
+                style={{ color: 'var(--pivot-lime, #d8ff68)', fontWeight: 650, background: 'none', border: 'none', cursor: 'pointer', textDecoration: 'underline' }}
               >
                 Sign In
               </button>
@@ -282,7 +291,7 @@ export const AuthPage: React.FC = () => {
               <button
                 type="button"
                 onClick={() => { setIsRegister(true); setErrorMessage(''); }}
-                style={{ color: 'var(--color-accent)', fontWeight: 600, background: 'none', border: 'none', cursor: 'pointer', textDecoration: 'underline' }}
+                style={{ color: 'var(--pivot-lime, #d8ff68)', fontWeight: 650, background: 'none', border: 'none', cursor: 'pointer', textDecoration: 'underline' }}
               >
                 Create One
               </button>
