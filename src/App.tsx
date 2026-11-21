@@ -1,5 +1,5 @@
 import React, { Suspense } from 'react';
-import { BrowserRouter, Routes, Route, Navigate, useLocation } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate, useLocation, useNavigate } from 'react-router-dom';
 import { AuthProvider } from './context/AuthContext.js';
 import { ToastProvider } from './context/ToastContext.js';
 import { useAuth } from './context/AuthContext.js';
@@ -42,6 +42,21 @@ const AutopilotPage = React.lazy(() => import('./pages/AutopilotPage.js').then(m
 const ReadinessExperimentPage = React.lazy(() => import('./pages/ReadinessExperimentPage.js').then(m => ({ default: m.ReadinessExperimentPage })));
 const ApplicationTrackerPage = React.lazy(() => import('./pages/ApplicationTrackerPage.js').then(m => ({ default: m.ApplicationTrackerPage })));
 
+const DemoRedirect: React.FC = () => {
+  const { demoLogin } = useAuth();
+  const navigate = useNavigate();
+  React.useEffect(() => {
+    demoLogin()
+      .then(() => navigate('/dashboard', { replace: true }))
+      .catch(() => navigate('/auth', { replace: true }));
+  }, [demoLogin, navigate]);
+  return (
+    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: '100vh', color: 'var(--text-muted)' }}>
+      <div className="spin" style={{ width: 36, height: 36, border: '3px solid rgba(211, 138, 25, 0.2)', borderTopColor: 'var(--color-accent)', borderRadius: '50%' }} />
+    </div>
+  );
+};
+
 const PageLoader: React.FC = () => (
   <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '60vh' }}>
     <div role="status" aria-live="polite" style={{ textAlign: 'center', color: 'var(--text-secondary)' }}>
@@ -77,6 +92,7 @@ const AppRoutes: React.FC = () => {
         {/* Public Routes */}
         <Route path="/" element={<LandingPage />} />
         <Route path="/auth" element={<AuthPage />} />
+        <Route path="/demo" element={<DemoRedirect />} />
 
         {/* Protected Onboarding */}
         <Route
